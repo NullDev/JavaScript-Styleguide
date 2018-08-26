@@ -561,11 +561,11 @@
   <a name="strings--quotes"></a><a name="6.1"></a>
   - [6.1](#strings--quotes) Use double quotes `""` for strings in stead of single quotes `''`. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
 
-    > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency. Here are some reasons for using double quotes: <br><br>
-    - Double quotes eliminate the need to escape apostrophes: `"I'm"` vs `'I\'m'`. <br>
-    - From a linguistic point of view, double quotes identify a passage of quoted text while single quotes are commonly used as a contraction. <br>
-    - Double quotes are used to define strings in many other languages. Single quotes are used to define `char`'s in some. <br>
-    - JSON notation is written with double quotes as well. 
+    > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency. Here are some reasons for using double quotes: <br>
+    > - Double quotes eliminate the need to escape apostrophes: `"I'm"` vs `'I\'m'`. 
+    > - From a linguistic point of view, double quotes identify a passage of quoted text while single quotes are commonly used as a contraction. 
+    > - Double quotes are used to define strings in many other languages. Single quotes are used to define `char`'s in some. 
+    > - JSON notation is written with double quotes as well. 
    
     ```javascript
     // bad
