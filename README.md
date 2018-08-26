@@ -652,7 +652,7 @@
   - [7.1](#functions--use-strict) Write the `"use strict";` directive in each and every script you code and put it on the first line to scope it globally. Also, make an empty line below it. eslint: [`strict`](https://eslint.org/docs/rules/strict)
 
     > Why? It is a good way to make your code safer. This is because strict mode doesn't allow the usage of dangerous features which could work in a way you wouldn't expect. Some things it does: <br>
-    > - It disallows global variables. 
+    > - It disallows non-explicit global variables. 
     > - Silent failing assignments will throw errors instead.
     > - It requires all property names in an object literal to be unique. 
     > - Function parameter names must be unique as well. <br><br>
