@@ -648,8 +648,50 @@
 
 ## Functions
 
-  <a name="functions--declarations"></a><a name="7.1"></a>
-  - [7.1](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
+  <a name="functions--use-strict"></a><a name="7.1"></a>
+  - [7.1](#functions--use-strict) Write the `"use strict";` directive in each and every script you code and put it on the first line to scope it globally. Also, make an empty line below it. eslint: [`strict`](https://eslint.org/docs/rules/strict)
+
+    > Why? It is a good way to make your code safer, this is because strict mode doesn't allow the usage of dangerous features which could work in a way you wouldn't expect. Some things it does: <br>
+    > - It disallows global variables. 
+    > - Silent failing assignments will throw errors instead.
+    > - It requires all property names in an object literal to be unique. 
+    > - Function parameter names must be unique as well. <br><br>
+    > 
+    > Also you do not need to worry about browser compartibility. It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. [Read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) about strict mode and [why you should use it](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it).
+
+    ```javascript
+    0    // bad
+    1    console.log("Foo");
+    2    let x = function(){
+    3        console.log("Bar");
+    4    };
+    5
+    
+    ---
+    
+    0    // bad
+    1    console.log("Foo");
+    2    let x = function(){
+    3        "use strict";
+    4        // strict mode is enabled in the scope of this function only!
+    5        console.log("Bar");
+    6    };
+    7
+    
+    ---
+    
+    0    "use strict";
+    1
+    2    // ^ Good
+    3    console.log("Foo");
+    4    let x = function(){
+    5        console.log("Bar");
+    6    };
+    7
+    ```
+
+  <a name="functions--declarations"></a><a name="7.2"></a>
+  - [7.2](#functions--declarations) Use named function expressions instead of function declarations. eslint: [`func-style`](https://eslint.org/docs/rules/func-style)
 
     > Why? Function declarations are hoisted, which means that it’s easy - too easy - to reference the function before it is defined in the file. This harms readability and maintainability. If you find that a function’s definition is large or complex enough that it is interfering with understanding the rest of the file, then perhaps it’s time to extract it to its own module! Don’t forget to explicitly name the expression, regardless of whether or not the name is inferred from the containing variable (which is often the case in modern browsers or when using compilers such as Babel). This eliminates any assumptions made about the Error's call stack. ([Discussion](https://github.com/airbnb/javascript/issues/794))
 
@@ -671,8 +713,8 @@
     };
     ```
 
-  <a name="functions--iife"></a><a name="7.2"></a>
-  - [7.2](#functions--iife) Wrap immediately invoked function expressions in parentheses. eslint: [`wrap-iife`](https://eslint.org/docs/rules/wrap-iife.html)
+  <a name="functions--iife"></a><a name="7.3"></a>
+  - [7.3](#functions--iife) Wrap immediately invoked function expressions in parentheses. eslint: [`wrap-iife`](https://eslint.org/docs/rules/wrap-iife.html)
 
     > Why? An immediately invoked function expression is a single unit - wrapping both it, and its invocation parens, in parens, cleanly expresses this. Note that in a world with modules everywhere, you almost never need an IIFE.
 
@@ -692,11 +734,11 @@
     }());
     ```
 
-  <a name="functions--in-blocks"></a><a name="7.3"></a>
-  - [7.3](#functions--in-blocks) Never declare a function in a non-function block (`if`, `while`, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears. eslint: [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func.html)
+  <a name="functions--in-blocks"></a><a name="7.4"></a>
+  - [7.4](#functions--in-blocks) Never declare a function in a non-function block (`if`, `while`, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears. eslint: [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func.html)
 
-  <a name="functions--note-on-blocks"></a><a name="7.4"></a>
-  - [7.4](#functions--note-on-blocks) **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement.
+  <a name="functions--note-on-blocks"></a><a name="7.5"></a>
+  - [7.5](#functions--note-on-blocks) **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement.
 
     ```javascript
     // bad
@@ -715,8 +757,8 @@
     }
     ```
 
-  <a name="functions--arguments-shadow"></a><a name="7.5"></a>
-  - [7.5](#functions--arguments-shadow) Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
+  <a name="functions--arguments-shadow"></a><a name="7.6"></a>
+  - [7.6](#functions--arguments-shadow) Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
 
     ```javascript
     // bad
@@ -730,8 +772,8 @@
     }
     ```
 
-  <a name="es6-rest"></a><a name="7.6"></a>
-  - [7.6](#es6-rest) Never use `arguments`, opt to use rest syntax `...` instead. eslint: [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
+  <a name="es6-rest"></a><a name="7.7"></a>
+  - [7.7](#es6-rest) Never use `arguments`, opt to use rest syntax `...` instead. eslint: [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
 
     > Why? `...` is explicit about which arguments you want pulled. Plus, rest arguments are a real Array, and not merely Array-like like `arguments`.
 
@@ -748,8 +790,8 @@
     }
     ```
 
-  <a name="es6-default-parameters"></a><a name="7.7"></a>
-  - [7.7](#es6-default-parameters) Use default parameter syntax rather than mutating function arguments.
+  <a name="es6-default-parameters"></a><a name="7.8"></a>
+  - [7.8](#es6-default-parameters) Use default parameter syntax rather than mutating function arguments.
 
     ```javascript
     // really bad
@@ -775,8 +817,8 @@
     }
     ```
 
-  <a name="functions--default-side-effects"></a><a name="7.8"></a>
-  - [7.8](#functions--default-side-effects) Avoid side effects with default parameters.
+  <a name="functions--default-side-effects"></a><a name="7.9"></a>
+  - [7.9](#functions--default-side-effects) Avoid side effects with default parameters.
 
     > Why? They are confusing to reason about.
 
@@ -792,8 +834,8 @@
     count();  // 3
     ```
 
-  <a name="functions--defaults-last"></a><a name="7.9"></a>
-  - [7.9](#functions--defaults-last) Always put default parameters last.
+  <a name="functions--defaults-last"></a><a name="7.10"></a>
+  - [7.10](#functions--defaults-last) Always put default parameters last.
 
     ```javascript
     // bad
@@ -807,8 +849,8 @@
     }
     ```
 
-  <a name="functions--constructor"></a><a name="7.10"></a>
-  - [7.10](#functions--constructor) Never use the Function constructor to create a new function. eslint: [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
+  <a name="functions--constructor"></a><a name="7.11"></a>
+  - [7.11](#functions--constructor) Never use the Function constructor to create a new function. eslint: [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
 
     > Why? Creating a function in this way evaluates a string similarly to `eval()`, which opens vulnerabilities.
 
@@ -820,8 +862,8 @@
     var subtract = Function("a", "b", "return a - b");
     ```
 
-  <a name="functions--signature-spacing"></a><a name="7.11"></a>
-  - [7.11](#functions--signature-spacing) Spacing in a function signature. eslint: [`space-before-function-paren`](https://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks)
+  <a name="functions--signature-spacing"></a><a name="7.12"></a>
+  - [7.12](#functions--signature-spacing) Spacing in a function signature. eslint: [`space-before-function-paren`](https://eslint.org/docs/rules/space-before-function-paren) [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks)
 
     > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
 
@@ -836,8 +878,8 @@
     const y = function a(){};
     ```
 
-  <a name="functions--mutate-params"></a><a name="7.12"></a>
-  - [7.12](#functions--mutate-params) Never mutate parameters. eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
+  <a name="functions--mutate-params"></a><a name="7.13"></a>
+  - [7.13](#functions--mutate-params) Never mutate parameters. eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
     > Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
 
@@ -853,8 +895,8 @@
     }
     ```
 
-  <a name="functions--reassign-params"></a><a name="7.13"></a>
-  - [7.13](#functions--reassign-params) Never reassign parameters. eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
+  <a name="functions--reassign-params"></a><a name="7.14"></a>
+  - [7.14](#functions--reassign-params) Never reassign parameters. eslint: [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign.html)
 
     > Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the `arguments` object. It can also cause optimization issues, especially in V8 (and therefore NodeJS as well).
 
@@ -881,8 +923,8 @@
     }
     ```
 
-  <a name="functions--spread-vs-apply"></a><a name="7.14"></a>
-  - [7.14](#functions--spread-vs-apply) Prefer the use of the spread operator `...` to call variadic functions. eslint: [`prefer-spread`](https://eslint.org/docs/rules/prefer-spread)
+  <a name="functions--spread-vs-apply"></a><a name="7.15"></a>
+  - [7.15](#functions--spread-vs-apply) Prefer the use of the spread operator `...` to call variadic functions. eslint: [`prefer-spread`](https://eslint.org/docs/rules/prefer-spread)
 
     > Why? It’s cleaner, you don’t need to supply a context, and you can not easily compose `new` with `apply`.
 
@@ -902,8 +944,8 @@
     new Date(...[2016, 8, 5]);
     ```
 
-  <a name="functions--signature-invocation-indentation"></a>
-  - [7.15](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
+  <a name="functions--signature-invocation-indentation"></a><a name="7.16"></a>
+  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
 
     ```javascript
     // bad
@@ -1241,7 +1283,7 @@
     }
     ```
 
-  <a name="classes--no-duplicate-members"></a>
+  <a name="classes--no-duplicate-members"></a><a name="9.6"></a>
   - [9.6](#classes--no-duplicate-members) Avoid duplicate class members. eslint: [`no-dupe-class-members`](https://eslint.org/docs/rules/no-dupe-class-members)
 
     > Why? Duplicate class member declarations will silently prefer the last one - having duplicates is almost certainly a bug.
@@ -1287,7 +1329,7 @@
     module.exports = bar;
     ```
 
-  <a name="modules--no-duplicate-imports"></a>
+  <a name="modules--no-duplicate-imports"></a><a name="10.2"></a>
   - [10.2](#modules--no-duplicate-imports) Only import from a path in one place.
  eslint: [`no-duplicate-imports`](https://eslint.org/docs/rules/no-duplicate-imports)
     > Why? Having multiple lines that import from the same path can make code harder to maintain.
@@ -1309,8 +1351,8 @@
     } = require("bar");
     ```
 
-  <a name="modules--no-mutable-exports"></a>
-  - [10.5](#modules--no-mutable-exports) Do not export mutable bindings.
+  <a name="modules--no-mutable-exports"></a><a name="10.3"></a>
+  - [10.3](#modules--no-mutable-exports) Do not export mutable bindings.
  eslint: [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
     > Why? Mutation should be avoided in general, but in particular when exporting mutable bindings. While this technique may be needed for some special cases, in general, only constant references should be exported.
 
@@ -1324,8 +1366,8 @@
     module.exports = foo;
     ```
 
-  <a name="modules--imports-first"></a>
-  - [10.6](#modules--imports-first) Put all `import`s above non-import statements.
+  <a name="modules--imports-first"></a><a name="10.4"></a>
+  - [10.4](#modules--imports-first) Put all `import`s above non-import statements.
  eslint: [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
     > Why? Since `import`s are hoisted, keeping them all at the top prevents surprising behavior.
 
@@ -1343,8 +1385,8 @@
     foo.init();
     ```
 
-  <a name="modules--multiline-imports-over-newlines"></a>
-  - [10.7](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
+  <a name="modules--multiline-imports-over-newlines"></a><a name="10.5"></a>
+  - [10.5](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
 
     > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
 
@@ -1511,7 +1553,7 @@
 
     const isTrue = getProp("bar");
     ```
-  <a name="es2016-properties--exponentiation-operator"></a>
+  <a name="es2016-properties--exponentiation-operator"></a><a name="12.3"></a>
   - [12.3](#es2016-properties--exponentiation-operator) Use exponentiation operator `**` when calculating exponentiations. eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
 
     ```javascript
