@@ -1444,7 +1444,7 @@
 
     // good
     const increasedByOne = [];
-    numbers.forEach((num) = {
+    numbers.forEach((num) => {
         increasedByOne.push(num + 1);
     });
 
