@@ -1,6 +1,7 @@
 # NullDev JavaScript Style Guide
 
-*A mostly reasonable approach to JavaScript*
+*A mostly reasonable approach to JavaScript* <br>
+<sub>Or... Mainly NodeJS...</sub>
 
 ## Table of Contents
 
