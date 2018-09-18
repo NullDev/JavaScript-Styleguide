@@ -1540,12 +1540,13 @@
     ```
 
   <a name="properties--bracket"></a><a name="12.2"></a>
-  - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable.
+  - [12.2](#properties--bracket) Use bracket notation `[]` when accessing properties with a variable or if the key includes illegal characters.
 
     ```javascript
     const foo = {
         bar: true,
         baz: 5,
+        "test-1": "foo"
     };
 
     function getProp(prop) {
@@ -1553,6 +1554,7 @@
     }
 
     const isTrue = getProp("bar");
+    const bar = foo["test-1"];
     ```
   <a name="es2016-properties--exponentiation-operator"></a><a name="12.3"></a>
   - [12.3](#es2016-properties--exponentiation-operator) Use exponentiation operator `**` when calculating exponentiations. eslint: [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties).
