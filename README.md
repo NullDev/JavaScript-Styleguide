@@ -560,7 +560,7 @@
 ## Strings
 
   <a name="strings--quotes"></a><a name="6.1"></a>
-  - [6.1](#strings--quotes) Use double quotes `""` for strings in stead of single quotes `''`. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
+  - [6.1](#strings--quotes) Use double quotes `""` for strings instead of single quotes `''`. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
 
     > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency. Here are some reasons for using double quotes: <br>
     > - Double quotes eliminate the need to escape apostrophes: `"I'm"` vs `'I\'m'`. 
