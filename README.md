@@ -2079,8 +2079,7 @@
   <a name="blocks--braces"></a><a name="16.1"></a>
   - [16.1](#blocks--braces) Use braces with all multi-line blocks. eslint: [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
   
-    > Note: Use one-line statements only with short commands. Like `if (x) y();`
-    > They look nicer but can be hard to debug
+    > Note: Use one-line statements only with short commands. Like `if (x) y();`<br> They look nicer but can be hard to debug
 
     ```javascript
     // bad
