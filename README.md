@@ -3687,6 +3687,7 @@
   - [ExploringJS](http://exploringjs.com/)
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
+  - [More on ES6 Features](https://github.com/lukehoban/es6features/)
 
 **Read This**
 
