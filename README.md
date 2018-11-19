@@ -2838,7 +2838,7 @@
     ```
 
   <a name="whitespace--func-call-spacing"></a>
-  - [19.16](#whitespace--func-call-spacing) Enforce spacing between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+  - [19.16](#whitespace--func-call-spacing) Avoid spacing between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
 
     ```javascript
     // bad
