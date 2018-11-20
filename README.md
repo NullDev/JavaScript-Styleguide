@@ -100,10 +100,53 @@
   1. :twisted_rightwards_arrows: [Type Casting & Coercion](#type-casting--coercion)
   1. :scroll: [Naming Conventions](#naming-conventions)
   1. :arrow_down: [Accessors](#accessors)
+     <details>
+     <summary>View contents</summary>
+
+     - [24.1](#accessors--not-required) Not required accessors
+     - [24.2](#accessors--no-getters-setters) Getters & Setters
+     - [24.3](#accessors--boolean-prefix) Boolean prefix
+     - [24.4](#accessors--consistent) Consistency
+
+     </details>
+
   1. :high_brightness: [Events](#events)
+     <details>
+     <summary>View contents</summary>
+
+     - [25.1](#events--hash) Hash
+
+     </details>
+
   1. :book: [Standard Library](#standard-library)
+     <details>
+     <summary>View contents</summary>
+
+     - [26.1](#standard-library--isnan) isNaN
+     - [26.2](#standard-library--isfinite) isFinite
+
+     </details>
+
   1. :nut_and_bolt: [jQuery](#jquery)
+     <details>
+     <summary>View contents</summary>
+
+     - [27.1](#jquery--dollar-prefix) Prefix
+     - [27.2](#jquery--cache) Cache
+     - [27.3](#jquery--queries) DOM queries
+     - [27.4](#jquery--find) Find
+     - [27.5](#jquery--on) Shorthands
+
+     </details>
+
   1. :arrows_counterclockwise: [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
+     <details>
+     <summary>View contents</summary>
+
+     - [28.1](#es5-compat--kangax) Compatibility table
+
+     </details>
+
   1. :six: [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
      <details>
      <summary>View contents</summary>
