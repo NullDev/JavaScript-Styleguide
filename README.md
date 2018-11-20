@@ -3848,3 +3848,13 @@ This Styleguide is based on [AirBnB's JavaScript Styleguide](https://github.com/
 ## Amendments
 
 We encourage you to fork this guide and change the rules to fit your team’s style guide. :smile_cat:
+
+<br><br><br>
+
+<p align="center">
+<a href="https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/LICENSE">
+<img src="https://img.shields.io/badge/License-MIT-F8E301.svg?style=flat-square"/>
+</a>
+</p>
+
+[![NullDev JavaScript Styleguide](https://i.imgur.com/3URRoQG.png)](https://nulldev.org)
