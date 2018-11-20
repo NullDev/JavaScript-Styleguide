@@ -83,6 +83,28 @@
      </details>
 
   1. :pager: [Functions](#functions)
+     <details>
+     <summary>View contents</summary>
+
+     - [7.1](#functions--use-strict) Strict mode
+     - [7.2](#functions--declarations) Declarations
+     - [7.3](#functions--iife) IIFE's
+     - [7.4](#functions--in-blocks) Non-function blocks
+     - [7.5](#functions--note-on-blocks) Blocks (Info)
+     - [7.6](#functions--arguments-shadow) Arguments shadow
+     - [7.7](#es6-rest) Rest
+     - [7.8](#es6-default-parameters) Default parameters
+     - [7.9](#functions--default-side-effects) Side effects
+     - [7.10](#functions--defaults-last) Defaults last
+     - [7.11](#functions--constructor) Function constructor
+     - [7.12](#functions--signature-spacing) Signature spacing
+     - [7.13](#functions--mutate-params) Mutating parameters
+     - [7.14](#functions--reassign-params) Reassigning parameters
+     - [7.15](#functions--spread-vs-apply) Spread
+     - [7.16](#functions--signature-invocation-indentation) Signature invocation indentation
+
+     </details>
+
   1. :arrow_right: [Arrow Functions](#arrow-functions)
      <details>
      <summary>View contents</summary>
