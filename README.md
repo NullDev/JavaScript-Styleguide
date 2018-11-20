@@ -183,8 +183,37 @@
      </details>
 
   1. :black_square_button: [Blocks](#blocks)
+     <details>
+     <summary>View contents</summary>
+
+     - [16.1](#blocks--braces) Braces
+     - [16.2](#blocks--cuddled-elses) Cuddled elses
+     - [16.3](#blocks--no-else-return) Returns
+
+     </details>
+
   1. :wrench: [Control Statements](#control-statements)
+     <details>
+     <summary>View contents</summary>
+
+     - [17.1](#control-statements) Length
+     - [17.2](#control-statements--value-selection) Selection operators
+
+     </details>
+
   1. :pencil: [Comments](#comments)
+     <details>
+     <summary>View contents</summary>
+
+     - [18.1](#comments--multiline) Multi-line
+     - [18.2](#comments--singleline) Single-line
+     - [18.3](#comments--spaces) Spaces
+     - [18.4](#comments--actionitems) Prefixing / Action-items
+     - [18.5](#comments--fixme) FixMe
+     - [18.6](#comments--todo) ToDo
+
+     </details>
+
   1. :white_circle: [Whitespace](#whitespace)
   1. :small_red_triangle_down: [Commas](#commas)
   1. :heavy_exclamation_mark: [Semicolons](#semicolons)
@@ -2629,7 +2658,7 @@
     ```
 
   <a name="comments--actionitems"></a><a name="17.3"></a>
-  - [18.4](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
+  - [18.4](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` (action-items) helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
 
   <a name="comments--fixme"></a><a name="17.4"></a>
   - [18.5](#comments--fixme) Use `// FIXME:` to annotate problems.
