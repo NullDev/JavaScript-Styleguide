@@ -2,8 +2,13 @@
 
 # NullDev JavaScript Style Guide
 
+<p align="center">
+<img height="150" width="auto" src="https://i.imgur.com/eCmJFjH.png" /><br>
+  
 *A mostly reasonable approach to JavaScript* <br>
 <sub>Or... Mainly NodeJS...</sub>
+
+</p>
 
 ## Table of Contents
 
