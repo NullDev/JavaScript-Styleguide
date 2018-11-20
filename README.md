@@ -130,6 +130,19 @@
      </details>
 
   1. :books: [Resources](#resources)
+     <details>
+     <summary>View contents</summary>
+
+     - [32.1](#resources--learning-es6) Learning ES6+
+     - [32.2](#resources--read-this) Read This
+     - [32.3](#resources--tools) Tools
+     - [32.4](#resources--further-reading) Further Reading
+     - [32.5](#resources--books) Books
+     - [32.6](#resources--blogs) Blogs
+     - [32.7](#resources--podcasts) Podcasts
+
+     </details>
+
   1. :copyright: [Copyright](#copyright)
      <details>
      <summary>View contents</summary>
