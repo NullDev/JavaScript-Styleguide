@@ -48,14 +48,35 @@
      - [4.2](#arrays--push) Push
      - [4.3](#es6-array-spreads) Array spreads
      - [4.4](#arrays--from-iterable) spread for iterable
+     - [4.5](#arrays--from-array-like) Array-like objects
      - [4.6](#arrays--mapping) Mapping
      - [4.7](#arrays--callback-return) Callback return
      - [4.8](#arrays--bracket-newline) Linebreaks
 
      </details>
-  
+
   1. :hammer: [Destructuring](#destructuring)
+     <details>
+     <summary>View contents</summary>
+
+     - [5.1](#destructuring--object) Object destructuring
+     - [5.2](#destructuring--array) Array destructuring
+     - [5.3](#destructuring--object-over-array) Object over array
+
+     </details>
+
   1. :page_facing_up: [Strings](#strings)
+     <details>
+     <summary>View contents</summary>
+
+     - [6.1](#strings--quotes) Quotes
+     - [6.2](#strings--line-length) Length
+     - [6.3](#es6-template-literals) Template literals
+     - [6.4](#strings--eval) Eval
+     - [6.5](#strings--escaping) Escaping
+
+     </details>
+
   1. :pager: [Functions](#functions)
   1. :arrow_right: [Arrow Functions](#arrow-functions)
   1. :triangular_ruler: [Classes & Constructors](#classes--constructors)
@@ -79,8 +100,30 @@
   1. :nut_and_bolt: [jQuery](#jquery)
   1. :arrows_counterclockwise: [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. :six: [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
+     <details>
+     <summary>View contents</summary>
+
+     - [29.1](#es6-styles) ES6 Styles
+     - [29.2](#tc39-proposals) Proposals
+
+     </details>
+
   1. :electric_plug: [Testing](#testing)
+     <details>
+     <summary>View contents</summary>
+
+     - [30.1](#testing--tests) Tests
+
+     </details>
+
   1. :chart_with_upwards_trend: [Performance](#performance)
+     <details>
+     <summary>View contents</summary>
+
+     - [31.1](#performance--performance) Pperformance
+
+     </details>
+
   1. :books: [Resources](#resources)
   1. :copyright: [Copyright](#copyright)
   1. :recycle: [Amendments](#amendments)
@@ -3713,14 +3756,16 @@
 
 ## Performance
 
-  - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
-  - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
-  - [Try/Catch Cost In a Loop](https://jsperf.com/try-catch-in-loop-cost)
-  - [Bang Function](https://jsperf.com/bang-function)
-  - [jQuery Find vs Context, Selector](https://jsperf.com/jquery-find-vs-context-sel/13)
-  - [innerHTML vs textContent for script text](https://jsperf.com/innerhtml-vs-textcontent-for-script-text)
-  - [Long String Concatenation](https://jsperf.com/ya-string-concat)
-  - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
+  <a name="performance--performance"></a><a name="30.1"></a>
+  - [31.1](#performance--performance) **Performance**
+    - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
+    - [String vs Array Concat](https://jsperf.com/string-vs-array-concat/2)
+    - [Try/Catch Cost In a Loop](https://jsperf.com/try-catch-in-loop-cost)
+    - [Bang Function](https://jsperf.com/bang-function)
+    - [jQuery Find vs Context, Selector](https://jsperf.com/jquery-find-vs-context-sel/13)
+    - [innerHTML vs textContent for script text](https://jsperf.com/innerhtml-vs-textcontent-for-script-text)
+    - [Long String Concatenation](https://jsperf.com/ya-string-concat)
+    - [Are Javascript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
 
 **[⬆ back to top](#table-of-contents)**
 
