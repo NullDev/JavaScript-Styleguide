@@ -1,12 +1,10 @@
 [![NullDev JavaScript Styleguide](https://i.imgur.com/CtxIv3c.png)](https://nulldev.org)
 
-# NullDev JavaScript Style Guide
+# NullDev JavaScript StyleGuide
 
-<p align="center">
-<img height="150" width="auto" src="https://i.imgur.com/eCmJFjH.png" /><br>
-  
-*A mostly reasonable approach to JavaScript* <br>
-<sub>Or... Mainly NodeJS...</sub>
+<p align="center"><img height="150" width="auto" src="https://i.imgur.com/eCmJFjH.png" /></p>
+<p align="center"><b>A <i>mostly</i> reasonable approach to JavaScript</b></p>
+<p align="center"><sub>Or... Mainly NodeJS...</sub></p>
 
 </p>
 
