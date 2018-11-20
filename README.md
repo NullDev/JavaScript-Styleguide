@@ -84,13 +84,104 @@
 
   1. :pager: [Functions](#functions)
   1. :arrow_right: [Arrow Functions](#arrow-functions)
+     <details>
+     <summary>View contents</summary>
+
+     - [8.1](#arrows--use-them) Usage
+     - [8.2](#arrows--implicit-return) Implicit return
+     - [8.3](#arrows--paren-wrap) Wrap
+     - [8.4](#arrows--one-arg-parens) Omitting parentheses
+     - [8.5](#arrows--confusing) Confusing functions
+     - [8.6](#whitespace--implicit-arrow-linebreak) Linebreaks
+
+     </details>
+
   1. :triangular_ruler: [Classes & Constructors](#classes--constructors)
+     <details>
+     <summary>View contents</summary>
+
+     - [9.1](#constructors--use-class) Use `class`
+     - [9.2](#constructors--extends) Inheritance
+     - [9.3](#constructors--chaining) Chaining
+     - [9.4](#constructors--tostring) toString methods
+     - [9.5](#constructors--no-useless) No empty constructors
+     - [9.6](#classes--no-duplicate-members) No duplicate members
+
+     </details>
+
   1. :postbox: [Modules](#modules)
+     <details>
+     <summary>View contents</summary>
+
+     - [10.1](#modules--use-them) CommonJS 
+     - [10.2](#modules--no-duplicate-imports) Duplicate imports
+     - [10.3](#modules--no-mutable-exports) Mutable exports
+     - [10.4](#modules--imports-first) Imports first
+     - [10.5](#modules--multiline-imports-over-newlines) Multiline imports
+
+     </details>
+
   1. :arrows_clockwise: [Iterators and Generators](#iterators-and-generators)
+     <details>
+     <summary>View contents</summary>
+
+     - [11.1](#iterators--nope) Higher-order functions
+     - [11.2](#generators--nope) Generators
+     - [11.3](#generators--spacing) Spacing
+
+     </details>
+
   1. :bookmark_tabs: [Properties](#properties)
+     <details>
+     <summary>View contents</summary>
+
+     - [12.1](#properties--dot) Dot notation
+     - [12.2](#properties--bracket) Bracket notation
+     - [12.3](#es2016-properties--exponentiation-operator) Exponentiation operator
+
+     </details>
+
   1. :floppy_disk: [Variables](#variables)
+     <details>
+     <summary>View contents</summary>
+
+     - [13.1](#variables--const) Global namespace
+     - [13.2](#variables--one-const) Declaration per variable
+     - [13.3](#variables--const-let-group) Grouping
+     - [13.4](#variables--define-where-used) Placing
+     - [13.5](#variables--no-chain-assignment) Chain assignment
+     - [13.6](#variables--unary-increment-decrement) Increment & decrement
+     - [13.7](#variables--linebreak) Linebreaks
+     - [13.8](#variables--no-unused-vars) Unused variables
+
+     </details>
+
   1. :arrow_heading_up: [Hoisting](#hoisting)
+     <details>
+     <summary>View contents</summary>
+
+     - [14.1](#hoisting--about) About
+     - [14.2](#hoisting--anon-expressions) Anonymous function expressions
+     - [14.3](#hoisting--named-expressions) Named function expressions
+     - [14.4](#hoisting--declarations) Function declarations
+
+     </details>
+
   1. :left_right_arrow: [Comparison Operators & Equality](#comparison-operators--equality)
+     <details>
+     <summary>View contents</summary>
+
+     - [15.1](#comparison--eqeqeq) Strict comparison
+     - [15.2](#comparison--if) Conditional statements
+     - [15.3](#comparison--shortcuts) Shortcuts
+     - [15.4](#comparison--moreinfo) Truth Equality
+     - [15.5](#comparison--switch-blocks) Switch blocks
+     - [15.6](#comparison--nested-ternaries) Nested ternaries
+     - [15.7](#comparison--unneeded-ternary) Unneeded-ternaries
+     - [15.8](#comparison--no-mixed-operators) Mixed operators
+
+     </details>
+
   1. :black_square_button: [Blocks](#blocks)
   1. :wrench: [Control Statements](#control-statements)
   1. :pencil: [Comments](#comments)
@@ -2060,7 +2151,7 @@
 ## Comparison Operators & Equality
 
   <a name="comparison--eqeqeq"></a><a name="15.1"></a>
-  - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=`. eslint: [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq.html)
+  - [15.1](#comparison--eqeqeq) Use `===` and `!==` over `==` and `!=` (Strict comparison). eslint: [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq.html)
 
   <a name="comparison--if"></a><a name="15.2"></a>
   - [15.2](#comparison--if) Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
