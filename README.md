@@ -6,9 +6,54 @@
 ## Table of Contents
 
   1. :clipboard: [Types](#types)
+     <details>
+     <summary>View contents</summary>
+
+       - [1.1](#types--primitives) Primitives
+       - [1.2](#types--complex) Complex
+
+     </details>
+
   1. :link: [References](#references)
+     <details>
+     <summary>View contents</summary>
+
+       - [2.1](#references--prefer-const) Prefer `const`
+       - [2.2](#references--disallow-var) Disallow `var`
+       - [2.3](#references--let-require) `let` for `require()`
+       - [2.4](#references--block-scope) Block scope
+
+     </details>
+
   1. :package: [Objects](#objects)
+     <details>
+     <summary>View contents</summary>
+
+     - [3.1](#objects--no-new) Literals
+     - [3.2](#es6-computed-properties) Computed properties
+     - [3.3](#es6-object-shorthand) Object shorthand
+     - [3.4](#es6-object-concise) Object concise
+     - [3.5](#objects--grouped-shorthand) Grouped shorthand
+     - [3.6](#objects--quoted-props) Quoted properties
+     - [3.7](#objects--prototype-builtins) Prototype Builtins
+     - [3.8](#objects--rest-spread) Rest spread
+
+     </details>
+
   1. :bookmark_tabs: [Arrays](#arrays)
+     <details>
+     <summary>View contents</summary>
+
+     - [4.1](#arrays--literals) Literals
+     - [4.2](#arrays--push) Push
+     - [4.3](#es6-array-spreads) Array spreads
+     - [4.4](#arrays--from-iterable) spread for iterable
+     - [4.6](#arrays--mapping) Mapping
+     - [4.7](#arrays--callback-return) Callback return
+     - [4.8](#arrays--bracket-newline) Linebreaks
+
+     </details>
+  
   1. :hammer: [Destructuring](#destructuring)
   1. :page_facing_up: [Strings](#strings)
   1. :pager: [Functions](#functions)
@@ -64,7 +109,7 @@
     - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
 
   <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex)  **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#types--complex) **Complex**: When you access a complex type you work on a reference to its value.
 
     - `object`
     - `array`
@@ -3688,7 +3733,7 @@
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
   - [More on ES6 Features](https://github.com/lukehoban/es6features/)
-  - [useful JavaScript snippets that you can understand in 30 seconds](https://github.com/30-seconds/30-seconds-of-code)
+  - [Useful JavaScript snippets that you can understand in 30 seconds](https://github.com/30-seconds/30-seconds-of-code)
 
 **Read This**
 
