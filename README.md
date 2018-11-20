@@ -216,9 +216,52 @@
 
   1. :white_circle: [Whitespace](#whitespace)
   1. :small_red_triangle_down: [Commas](#commas)
+     <details>
+     <summary>View contents</summary>
+
+       - [20.1](#commas--leading-trailing) Leading commas
+       - [20.2](#commas--dangling) Comma Dangling
+
+     </details>
+
   1. :heavy_exclamation_mark: [Semicolons](#semicolons)
+     <details>
+     <summary>View contents</summary>
+
+       - [21.1](#semicolons--required) Use semicolons
+
+     </details>
+
   1. :twisted_rightwards_arrows: [Type Casting & Coercion](#type-casting--coercion)
+     <details>
+     <summary>View contents</summary>
+
+     - [22.1](#coercion--explicit) Explicit coercion
+     - [22.2](#coercion--strings) Strings
+     - [22.3](#coercion--numbers) Numbers
+     - [22.4](#coercion--comment-deviations) Deviations
+     - [22.5](#coercion--bitwise) Bitwise
+     - [22.6](#coercion--booleans) Booleans
+
+     </details>
+
   1. :scroll: [Naming Conventions](#naming-conventions)
+     <details>
+     <summary>View contents</summary>
+
+     - [23.1](#naming--descriptive) Descriptive
+     - [23.2](#naming--camelCase) camelCase
+     - [23.3](#naming--PascalCase) PascalCase
+     - [23.4](#naming--leading-underscore) Underscores
+     - [23.5](#naming--self-this) `this`
+     - [23.6](#naming--filename-matches-export) Filename
+     - [23.7](#naming--camelCase-default-export) Defaut export
+     - [23.8](#naming--PascalCase-singleton) Singleton
+     - [23.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms
+     - [23.10](#naming--uppercase) Uppercase
+
+     </details>
+
   1. :arrow_down: [Accessors](#accessors)
      <details>
      <summary>View contents</summary>
