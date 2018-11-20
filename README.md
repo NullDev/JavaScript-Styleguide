@@ -3688,6 +3688,7 @@
   - [ES6 Compatibility Table](https://kangax.github.io/compat-table/es6/)
   - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
   - [More on ES6 Features](https://github.com/lukehoban/es6features/)
+  - [useful JavaScript snippets that you can understand in 30 seconds](https://github.com/30-seconds/30-seconds-of-code)
 
 **Read This**
 
