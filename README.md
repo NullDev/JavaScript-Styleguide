@@ -4063,6 +4063,7 @@
     - [Comprehensive Overview of ES6 Features](http://es6-features.org/)
     - [More on ES6 Features](https://github.com/lukehoban/es6features/)
     - [Useful JavaScript snippets that you can understand in 30 seconds](https://github.com/30-seconds/30-seconds-of-code)
+    - [collection of common interview questions (test yourself here)](https://github.com/30-seconds/30-seconds-of-interviews)
 
   <a name="resources--read-this"></a><a name="32.2"></a>
   - [32.2](#resources--read-this) **Read This**
