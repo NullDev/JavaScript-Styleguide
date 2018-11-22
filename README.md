@@ -175,6 +175,7 @@
      - [13.6](#variables--unary-increment-decrement) Increment & decrement
      - [13.7](#variables--linebreak) Linebreaks
      - [13.8](#variables--no-unused-vars) Unused variables
+     - [13.9](#variables--bitwise-floor) Bitwise floor
 
      </details>
 
@@ -2102,7 +2103,7 @@
     const truthyCount = array.filter(Boolean).length;
     ```
 
-<a name="variables--linebreak"></a>
+<a name="variables--linebreak"></a><a name="13.7"></a>
   - [13.7](#variables--linebreak) Avoid linebreaks before or after `=` in an assignment. If your assignment violates [`max-len`](https://eslint.org/docs/rules/max-len.html), surround the value in parens. eslint [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak.html).
 
     > Why? Linebreaks surrounding `=` can obfuscate the value of an assignment.
@@ -2125,7 +2126,7 @@
     const foo = "superLongLongLongLongLongLongLongLongString";
     ```
 
-<a name="variables--no-unused-vars"></a>
+<a name="variables--no-unused-vars"></a><a name="13.8"></a>
   - [13.8](#variables--no-unused-vars) Disallow unused variables. eslint: [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
 
     > Why? Variables that are declared and not used anywhere in the code are most likely an error due to incomplete refactoring. Such variables take up space in the code and can lead to confusion by readers.
@@ -2133,14 +2134,14 @@
     ```javascript
     // bad
 
-    var some_unused_var = 42;
+    let some_unused_var = 42;
 
     // Write-only variables are not considered as used.
-    var y = 10;
+    let y = 10;
     y = 5;
 
     // A read for a modification of itself is not considered as used.
-    var z = 0;
+    let z = 0;
     z = z + 1;
 
     // Unused function arguments.
@@ -2154,15 +2155,32 @@
         return x + y;
     }
 
-    var x = 1;
-    var y = a + 2;
+    let x = 1;
+    let y = a + 2;
 
     alert(getXPlusY(x, y));
 
     // 'type' is ignored even if unused because it has a rest property sibling.
     // This is a form of extracting an object that omits the specified keys.
-    var { type, ...coords } = data;
+    let { type, ...coords } = data;
     // 'coords' is now the 'data' object without its 'type' property.
+    ```
+
+  <a name="variables--bitwise-floor"></a><a name="13.9"></a>
+  - [13.9](#variables--bitwise-floor) Do not floor variables with the bitwise or (`x | 0`). Use `Math.floor()` or if you must `Math.trunc()`.
+    > Why? First off, it does **not** _floor_ the number. It _truncates_ it (rounding towards 0). It causes odd Comparative behavior as well: `Math.floor(NaN) === NaN`, while `(NaN | 0) === 0`. Also, it works with 32-bit signed integers only. As mentioned above, use `Math.trunc()` if you have to. It is the ES5 equivalent of `| 0` and it is able to work with numbers higher or equal to 2^31. 
+
+    ```javascript
+    let x = 42.835
+    
+    // Bad
+    let y = x | 0;
+    
+    // Okay
+    let y = Math.trunc(x);
+    
+    // Good 
+    let y = Math.floor(x);
     ```
 
 **[⬆ back to top](#table-of-contents)**
