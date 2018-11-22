@@ -1,4 +1,4 @@
-[![NullDev JavaScript Styleguide](https://i.imgur.com/CtxIv3c.png)](https://nulldev.org)
+[![NullDev JavaScript Styleguide](https://i.imgur.com/VcFtkgK.png)](https://nulldev.org)
 
 # NullDev JavaScript StyleGuide
 
@@ -4160,4 +4160,4 @@
 </a>
 </p>
 
-[![NullDev JavaScript Styleguide](https://i.imgur.com/3URRoQG.png)](https://nulldev.org)
+[![NullDev JavaScript Styleguide](https://i.imgur.com/52YayNH.png)](https://nulldev.org)
