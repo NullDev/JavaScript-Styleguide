@@ -2274,7 +2274,7 @@
     function example(){
         foo(); // => bar
 
-        function superPower(){
+        function foo(){
             console.log("bar");
         }
     }
