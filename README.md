@@ -1823,7 +1823,7 @@
     });
 
     // best (keeping it functional)
-    const increasedByOne = numbers.map(num > num + 1);
+    const increasedByOne = numbers.map(num => num + 1);
     ```
 
   <a name="generators--nope"></a><a name="11.2"></a>
