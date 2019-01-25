@@ -1076,13 +1076,13 @@
     }
 
     // okay
-    const foo = function(){
+    let foo = function(){
         // ...
     };
 
     // good
     // lexical name distinguished from the variable-referenced invocation(s)
-    const short = function longUniqueMoreDescriptiveLexicalFoo(){
+    let short = function longUniqueMoreDescriptiveLexicalFoo(){
         // ...
     };
     ```
@@ -1197,7 +1197,7 @@
     > Why? They are confusing to reason about.
 
     ```javascript
-    var b = 1;
+    let b = 1;
     // bad
     function count(a = b++){
         console.log(a);
@@ -1230,10 +1230,10 @@
 
     ```javascript
     // bad
-    var add = new Function("a", "b", "return a + b");
+    let add = new Function("a", "b", "return a + b");
 
     // still bad
-    var subtract = Function("a", "b", "return a - b");
+    let subtract = Function("a", "b", "return a - b");
     ```
 
   <a name="functions--signature-spacing"></a><a name="7.12"></a>
