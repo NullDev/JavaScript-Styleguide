@@ -302,7 +302,7 @@
      - [23.4](#naming--leading-underscore) Underscores
      - [23.5](#naming--self-this) `this`
      - [23.6](#naming--filename-matches-export) Filename
-     - [23.7](#naming--camelCase-default-export) Defaut export
+     - [23.7](#naming--camelCase-default-export) Default export
      - [23.8](#naming--PascalCase-singleton) Singleton
      - [23.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms
      - [23.10](#naming--uppercase) Uppercase
