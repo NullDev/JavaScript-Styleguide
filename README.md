@@ -378,7 +378,7 @@
      <details>
      <summary>View contents</summary>
 
-     - [31.1](#performance--performance) Pperformance
+     - [31.1](#performance--performance) Performance
 
      </details>
 
