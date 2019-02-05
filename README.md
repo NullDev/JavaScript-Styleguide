@@ -3689,7 +3689,7 @@
     ```javascript
     const Foo = {
         bar: {
-        },
+        }
     };
 
     module.exports = Foo;
