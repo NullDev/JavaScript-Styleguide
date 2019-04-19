@@ -549,7 +549,7 @@
     // bad
     const obj = {
         id: 5,
-        name: "foo",
+        name: "foo"
     };
     obj[getKey("enabled")] = true;
 
@@ -557,7 +557,7 @@
     const obj = {
         id: 5,
         name: "foo",
-        [getKey("enabled")]: true,
+        [getKey("enabled")]: true
     };
     ```
 
@@ -571,7 +571,7 @@
 
         addValue: function (value) {
             return foo.value + value;
-        },
+        }
     };
 
     // good
@@ -580,7 +580,7 @@
 
         addValue(value) {
             return foo.value + value;
-        },
+        }
     };
     ```
 
@@ -594,12 +594,12 @@
 
     // bad
     const obj = {
-        foo: foo,
+        foo: foo
     };
 
     // good
     const obj = {
-        foo,
+        foo
     };
     ```
 
@@ -619,7 +619,7 @@
         foo,
         abc: 3,
         xyz: 4,
-        bar,
+        bar
     };
 
     // good
@@ -629,7 +629,7 @@
         test: 1,
         key: 2,
         abc: 3,
-        xyz: 4,
+        xyz: 4
     };
     ```
 
@@ -643,14 +643,14 @@
     const bad = {
         "foo": 3,
         "bar": 4,
-        "data-foo": 5,
+        "data-foo": 5
     };
 
     // good
     const good = {
         foo: 3,
         bar: 4,
-        "data-foo": 5,
+        "data-foo": 5
     };
     ```
 
