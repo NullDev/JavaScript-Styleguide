@@ -794,13 +794,11 @@
     // bad - no returned value means `acc` becomes undefined after the first iteration
     [[0, 1], [2, 3], [4, 5]].reduce((acc, item, index) => {
         const flatten = acc.concat(item);
-        acc[index] = flatten;
     });
 
     // good
     [[0, 1], [2, 3], [4, 5]].reduce((acc, item, index) => {
         const flatten = acc.concat(item);
-        acc[index] = flatten;
         return flatten;
     });
 
