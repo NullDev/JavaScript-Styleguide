@@ -79,6 +79,7 @@
      - [6.3](#es6-template-literals) Template literals
      - [6.4](#strings--eval) Eval
      - [6.5](#strings--escaping) Escaping
+     - [6.6](#strings--regex) Regular Expressions (RegEx)
 
      </details>
 
@@ -974,7 +975,7 @@
     const errorMessage = "This is a super long error - lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et.";
     ```
 
-  <a name="es6-template-literals"></a><a name="6.4"></a>
+  <a name="es6-template-literals"></a><a name="6.3"></a>
   - [6.3](#es6-template-literals) When programmatically building up strings, use template strings instead of concatenation. eslint: [`prefer-template`](https://eslint.org/docs/rules/prefer-template.html) [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
 
     > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
@@ -1001,10 +1002,10 @@
     }
     ```
 
-  <a name="strings--eval"></a><a name="6.5"></a>
+  <a name="strings--eval"></a><a name="6.4"></a>
   - [6.4](#strings--eval) Never use `eval()` on a string, it opens too many vulnerabilities. eslint: [`no-eval`](https://eslint.org/docs/rules/no-eval)
 
-  <a name="strings--escaping"></a>
+  <a name="strings--escaping"></a><a name="6.5"></a>
   - [6.5](#strings--escaping) Do not unnecessarily escape characters in strings. eslint: [`no-useless-escape`](https://eslint.org/docs/rules/no-useless-escape)
 
     > Why? Backslashes harm readability, thus they should only be present when necessary.
@@ -1016,6 +1017,27 @@
     // good
     const foo = "\"this\" is 'quoted'";
     const foo = `my name is "${name}"`;
+    ```
+
+  <a name="strings--regex"></a></a><a name="6.6"></a>
+  - [6.6](#strings--regex) Do not split regular expressions, even if some parts are used multiple times. The only exception are computed RegEx'es.
+  
+    > Why? It has a great impact on readabilty and can lead to extremely confusing code
+    
+    ```javascript
+    // bad
+    const baseSite = "http(?:s?):\/\/website\.com\/";
+    const topic = "(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)";
+    const comment = "(?:(?::)comment(\d+))";
+    
+    const uploadsRegex = new RegExp(baseSite + topic, "gi");
+    const commentRegex = new RegExp(baseSite + topic + comment, "gi");
+    const profileRegex = new RegExp(baseSite + "user\/(\w+)", "gi");
+    
+    // good
+    const uploadsRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)/gi,
+    const commentRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)(?:(?::)comment(\d+))/gi,
+    const profileRegex = /http(?:s?):\/\/website\.com\/user\/(\w+)/gi
     ```
 
 **[⬆ back to top](#table-of-contents)**
