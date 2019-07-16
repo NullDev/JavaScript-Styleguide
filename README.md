@@ -347,6 +347,7 @@
      - [27.3](#jquery--queries) DOM queries
      - [27.4](#jquery--find) Find
      - [27.5](#jquery--on) Shorthands
+     - [27.6](#jquery--ready) Don't bloat `.ready()`
 
      </details>
 
@@ -4025,6 +4026,48 @@
     
     $("div.test").on("mouseover", function(){
         // ...
+    });
+    ```
+
+  <a name="jquery--ready"></a><a name="27.6"></a>
+  - [27.6](#jquery--ready) Don't bloat the `$(document).ready()` function
+  
+    > Why? It actively harms readability and generally the structure of the code.
+    
+    ```javascript
+    
+    // Bad
+    $(document).ready(function(){
+        $(foo).on("click", function(){
+            doStuff();
+            doMoreStuff();
+            doEvenMoreStuff(function(stuff){
+                // ...
+            });
+        });
+        
+        $(bar).on("click", function(){
+            doMoreStuff();
+            doStuff();
+        });
+        
+        $(baz).on("click", function(){
+            doMoreStuff();
+            doEvenMoreStuff(function(stuff){
+                // ...
+            });
+        });
+    });
+    
+    // Good
+    function stuffHandler(){
+        // ...
+    }
+    
+    $(document).ready(function(){
+        $(foo).on("click", stuffHandler);
+        $(bar).on("click", stuffHandler);
+        $(baz).on("click", stuffHandler);
     });
     ```
 
