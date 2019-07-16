@@ -2845,6 +2845,8 @@
   <a name="whitespace--before-blocks"></a><a name="19.2"></a>
   - [19.2](#whitespace--before-blocks) Place 1 space before the leading brace **if** the character before it is _not_ a parenthesis. eslint: [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks.html)
 
+    > Why? Technically speaking, the block is part of the expression. A space doesn't really make sense unless it is simpler to read.
+
     ```javascript
     // bad
     function test() {
