@@ -307,6 +307,7 @@
      - [23.8](#naming--PascalCase-singleton) Singleton
      - [23.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms
      - [23.10](#naming--uppercase) Uppercase
+     - [23.11](#naming--state-booleans) State-Booleans
 
      </details>
 
@@ -3791,6 +3792,21 @@
     export const MAPPING = {
         key: "value"
     };
+    ```
+  <a name="naming--state-booleans"></a><a name="23.11"></a>
+  - [23.11](#naming--state-booleans) Write `isCondition` instead of `conditionState` for boolean state checks.
+  
+    > Why? It makes the intentions clear.
+    
+    ```javascript
+    // bad - this is very vague
+    if (activeState) doSomething();
+
+    // bad - the "=== true" check makes the intentions clear, but is also unnecessary
+    if (activeState === true) doSomething();
+    
+    // good - short and clear
+    if (isActive) doSomething();
     ```
 
 **[⬆ back to top](#table-of-contents)**
