@@ -229,6 +229,7 @@
      <details>
      <summary>View contents</summary>
 
+     - [18.0](#comments--language) Language
      - [18.1](#comments--multiline) Multi-line
      - [18.2](#comments--singleline) Single-line
      - [18.3](#comments--spaces) Spaces
@@ -297,6 +298,7 @@
      <details>
      <summary>View contents</summary>
 
+     - [23.0](#naming--language) Language
      - [23.1](#naming--descriptive) Descriptive
      - [23.2](#naming--camelCase) camelCase
      - [23.3](#naming--PascalCase) PascalCase
@@ -2068,10 +2070,12 @@
     ```javascript
     // bad
     (function example(){
-        // JavaScript interprets this as
-        // let a = ( b = ( c = 1 ) );
-        // The let keyword only applies to variable a; variables b and c become
-        // global variables.
+        /**
+         * JavaScript interprets this as
+         * let a = ( b = ( c = 1 ) );
+         * The let keyword only applies to variable a; variables b and c become
+         * global variables.
+         */
         let a = b = c = 1;
     }());
 
@@ -2679,6 +2683,15 @@
 **[⬆ back to top](#table-of-contents)**
 
 ## Comments
+
+  <a name="comments--language"></a><a name="18.0"></a>
+  - [18.0](#comments--language) Stick to the english language. Always write variable names, function names, comments and co in english.
+
+    > Why? Some reasons:
+    > - Consistency.
+    > - English is a global language. What if you're part of a german developer team, write code in german and then want to hire someone from another country? 
+    > - JavaScript's keywords are english.
+    > - Some languages use symbols from different charsets (ö, ä, ü, ß, Ѱ, Ω, etc. pp.). Some of them are illegal as variable/function names and others could break your encoding.
 
   <a name="comments--multiline"></a><a name="18.1"></a>
   - [18.1](#comments--multiline) Use `/** ... */` for multi-line comments.
@@ -3557,6 +3570,15 @@
 **[⬆ back to top](#table-of-contents)**
 
 ## Naming Conventions
+
+  <a name="naming--language"></a><a name="23.0"></a>
+  - [23.0](#naming--language) Stick to the english language. Always write variable names, function names, comments and co in english.
+
+    > Why? Some reasons:
+    > - Consistency.
+    > - English is a global language. What if you're part of a german developer team, write code in german and then want to hire someone from another country? 
+    > - JavaScript's keywords are english.
+    > - Some languages use symbols from different charsets (ö, ä, ü, ß, Ѱ, Ω, etc. pp.). Some of them are illegal as variable/function names and others could break your encoding.
 
   <a name="naming--descriptive"></a><a name="23.1"></a>
   - [23.1](#naming--descriptive) Avoid single letter names. Be descriptive with your naming. eslint: [`id-length`](https://eslint.org/docs/rules/id-length)
