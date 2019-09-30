@@ -3,40 +3,40 @@
 # NullDev JavaScript StyleGuide
 
 <p align="center"><img height="150" width="auto" src="https://i.imgur.com/eCmJFjH.png" /></p>
-<p align="center"><b>A <i>mostly</i> reasonable approach to JavaScript</b></p>
-<p align="center"><sub>Or... Mainly NodeJS...</sub></p>
+<p align="center"><b>Ein <i>zumeist</i> vernünftiger Ansatz für JavaScript</b></p>
+<p align="center"><sub>Oder... Hauptsächlich NodeJS...</sub></p>
 
 </p>
 
-## Table of Contents
+## Inhalt
 
-  1. :clipboard: [Types](#types)
+  1. :clipboard: [Typen](#types)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-       - [1.1](#types--primitives) Primitives
-       - [1.2](#types--complex) Complex
+       - [1.1](#types--primitives) Primitive Typen
+       - [1.2](#types--complex) Komplexe Typen
 
      </details>
 
-  1. :link: [References](#references)
+  1. :link: [Referenzen](#references)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-       - [2.1](#references--prefer-const) Prefer `const`
-       - [2.2](#references--disallow-var) Disallow `var`
-       - [2.3](#references--let-require) `let` for `require()`
+       - [2.1](#references--prefer-const) `const` bevorzugen
+       - [2.2](#references--disallow-var) `var` verbieten
+       - [2.3](#references--let-require) `let` für `require()`
        - [2.4](#references--block-scope) Block scope
 
      </details>
 
-  1. :package: [Objects](#objects)
+  1. :package: [Objekte](#objects)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [3.1](#objects--no-new) Literals
      - [3.2](#es6-computed-properties) Computed properties
-     - [3.3](#es6-object-shorthand) Object shorthand
+     - [3.3](#es6-object-shorthand) Objekt kurzform
      - [3.4](#es6-object-concise) Object concise
      - [3.5](#objects--grouped-shorthand) Grouped shorthand
      - [3.6](#objects--quoted-props) Quoted properties
@@ -47,7 +47,7 @@
 
   1. :bookmark_tabs: [Arrays](#arrays)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [4.1](#arrays--literals) Literals
      - [4.2](#arrays--push) Push
@@ -62,7 +62,7 @@
 
   1. :hammer: [Destructuring](#destructuring)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [5.1](#destructuring--object) Object destructuring
      - [5.2](#destructuring--array) Array destructuring
@@ -72,20 +72,19 @@
 
   1. :page_facing_up: [Strings](#strings)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [6.1](#strings--quotes) Quotes
      - [6.2](#strings--line-length) Length
      - [6.3](#es6-template-literals) Template literals
      - [6.4](#strings--eval) Eval
      - [6.5](#strings--escaping) Escaping
-     - [6.6](#strings--regex) Regular Expressions (RegEx)
 
      </details>
 
   1. :pager: [Functions](#functions)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [7.1](#functions--use-strict) Strict mode
      - [7.2](#functions--declarations) Declarations
@@ -108,7 +107,7 @@
 
   1. :arrow_right: [Arrow Functions](#arrow-functions)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [8.1](#arrows--use-them) Usage
      - [8.2](#arrows--implicit-return) Implicit return
@@ -121,7 +120,7 @@
 
   1. :triangular_ruler: [Classes & Constructors](#classes--constructors)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [9.1](#constructors--use-class) Use `class`
      - [9.2](#constructors--extends) Inheritance
@@ -134,7 +133,7 @@
 
   1. :postbox: [Modules](#modules)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [10.1](#modules--use-them) CommonJS 
      - [10.2](#modules--no-duplicate-imports) Duplicate imports
@@ -146,7 +145,7 @@
 
   1. :arrows_clockwise: [Iterators and Generators](#iterators-and-generators)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [11.1](#iterators--nope) Higher-order functions
      - [11.2](#generators--nope) Generators
@@ -156,7 +155,7 @@
 
   1. :bookmark_tabs: [Properties](#properties)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [12.1](#properties--dot) Dot notation
      - [12.2](#properties--bracket) Bracket notation
@@ -166,7 +165,7 @@
 
   1. :floppy_disk: [Variables](#variables)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [13.1](#variables--const) Global namespace
      - [13.2](#variables--one-const) Declaration per variable
@@ -182,7 +181,7 @@
 
   1. :arrow_heading_up: [Hoisting](#hoisting)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [14.1](#hoisting--about) About
      - [14.2](#hoisting--anon-expressions) Anonymous function expressions
@@ -193,7 +192,7 @@
 
   1. :left_right_arrow: [Comparison Operators & Equality](#comparison-operators--equality)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [15.1](#comparison--eqeqeq) Strict comparison
      - [15.2](#comparison--if) Conditional statements
@@ -208,7 +207,7 @@
 
   1. :black_square_button: [Blocks](#blocks)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [16.1](#blocks--braces) Braces
      - [16.2](#blocks--cuddled-elses) Cuddled elses
@@ -218,7 +217,7 @@
 
   1. :wrench: [Control Statements](#control-statements)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [17.1](#control-statements) Length
      - [17.2](#control-statements--value-selection) Selection operators
@@ -227,9 +226,8 @@
 
   1. :pencil: [Comments](#comments)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-     - [18.0](#comments--language) Language
      - [18.1](#comments--multiline) Multi-line
      - [18.2](#comments--singleline) Single-line
      - [18.3](#comments--spaces) Spaces
@@ -241,7 +239,7 @@
 
   1. :white_circle: [Whitespace](#whitespace)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [19.1](#whitespace--spaces) Soft tabs
      - [19.2](#whitespace--before-blocks) Before blocks
@@ -266,7 +264,7 @@
 
   1. :small_red_triangle_down: [Commas](#commas)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
        - [20.1](#commas--leading-trailing) Leading commas
        - [20.2](#commas--dangling) Comma Dangling
@@ -275,7 +273,7 @@
 
   1. :heavy_exclamation_mark: [Semicolons](#semicolons)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
        - [21.1](#semicolons--required) Use semicolons
 
@@ -283,7 +281,7 @@
 
   1. :twisted_rightwards_arrows: [Type Casting & Coercion](#type-casting--coercion)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [22.1](#coercion--explicit) Explicit coercion
      - [22.2](#coercion--strings) Strings
@@ -296,26 +294,24 @@
 
   1. :scroll: [Naming Conventions](#naming-conventions)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-     - [23.0](#naming--language) Language
      - [23.1](#naming--descriptive) Descriptive
      - [23.2](#naming--camelCase) camelCase
      - [23.3](#naming--PascalCase) PascalCase
      - [23.4](#naming--leading-underscore) Underscores
      - [23.5](#naming--self-this) `this`
      - [23.6](#naming--filename-matches-export) Filename
-     - [23.7](#naming--camelCase-default-export) Default export
+     - [23.7](#naming--camelCase-default-export) Defaut export
      - [23.8](#naming--PascalCase-singleton) Singleton
      - [23.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms
      - [23.10](#naming--uppercase) Uppercase
-     - [23.11](#naming--state-booleans) State-Booleans
 
      </details>
 
   1. :arrow_down: [Accessors](#accessors)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [24.1](#accessors--not-required) Not required accessors
      - [24.2](#accessors--no-getters-setters) Getters & Setters
@@ -326,7 +322,7 @@
 
   1. :high_brightness: [Events](#events)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [25.1](#events--hash) Hash
 
@@ -334,7 +330,7 @@
 
   1. :book: [Standard Library](#standard-library)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [26.1](#standard-library--isnan) isNaN
      - [26.2](#standard-library--isfinite) isFinite
@@ -343,37 +339,36 @@
 
   1. :nut_and_bolt: [jQuery](#jquery)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [27.1](#jquery--dollar-prefix) Prefix
      - [27.2](#jquery--cache) Cache
-     - [27.3](#jquery--queries) DOM queries
+     - [27.3](#jquery--queries) DOM Abfragen
      - [27.4](#jquery--find) Find
      - [27.5](#jquery--on) Shorthands
-     - [27.6](#jquery--ready) Don't bloat `.ready()`
 
      </details>
 
-  1. :arrows_counterclockwise: [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
+  1. :arrows_counterclockwise: [ECMAScript 5 Kompartibilität](#ecmascript-5-compatibility)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-     - [28.1](#es5-compat--kangax) Compatibility table
+     - [28.1](#es5-compat--kangax) Kompartibilitäts Tabelle
 
      </details>
 
   1. :six: [ECMAScript 6+ (ES 2015+) Styles](#ecmascript-6-es-2015-styles)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [29.1](#es6-styles) ES6 Styles
      - [29.2](#tc39-proposals) Proposals
 
      </details>
 
-  1. :electric_plug: [Testing](#testing)
+  1. :electric_plug: [Testen](#testing)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [30.1](#testing--tests) Tests
 
@@ -381,21 +376,21 @@
 
   1. :chart_with_upwards_trend: [Performance](#performance)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [31.1](#performance--performance) Performance
 
      </details>
 
-  1. :books: [Resources](#resources)
+  1. :books: [Resourcen](#resources)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-     - [32.1](#resources--learning-es6) Learning ES6+
-     - [32.2](#resources--read-this) Read This
+     - [32.1](#resources--learning-es6) ES6+ lernen
+     - [32.2](#resources--read-this) Zum lesen
      - [32.3](#resources--tools) Tools
-     - [32.4](#resources--further-reading) Further Reading
-     - [32.5](#resources--books) Books
+     - [32.4](#resources--further-reading) Mehr zum lesen
+     - [32.5](#resources--books) Bücher
      - [32.6](#resources--blogs) Blogs
      - [32.7](#resources--podcasts) Podcasts
 
@@ -403,25 +398,26 @@
 
   1. :copyright: [Copyright](#copyright)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
-     - [33.1](#copyright--base) Base
-     - [33.2](#copyright--license) License
+     - [33.1](#copyright--base) Basis
+     - [33.2](#copyright--license) Lizenz
+     - [33.3](#copyright--german) Englisch
 
      </details>
 
-  1. :recycle: [Amendments](#amendments)
+  1. :recycle: [Änderungen](#amendments)
      <details>
-     <summary>View contents</summary>
+     <summary>Inhalte anzeigen</summary>
 
      - [34.1](#amendments--forking) Forking
 
      </details>
 
-## Types
+## Typen
   
   <a name="types--primitives"></a><a name="1.1"></a>
-  - [1.1](#types--primitives) **Primitives**: When you access a primitive type you work directly on its value.
+  - [1.1](#types--primitives) **Primitive Typen**: Bei primitiven Datentypen wird immer direkt auf deren Wert zugegriffen.
 
     - `string`
     - `number`
@@ -439,10 +435,10 @@
     console.log(foo, bar); // => 1, 9
     ```
 
-    - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
+    - Symbols können oft nicht richtig polyfilled werden, deshalb sollte man sie vermeiden, wenn man für Browser/Umgebungen entwickelt, die siese nicht nativ unterstützen.
 
   <a name="types--complex"></a><a name="1.2"></a>
-  - [1.2](#types--complex) **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#types--complex) **Komplexe Typen**: Bei komplexen Datentypen wird immer auf eine Referenz zugegriffen.
 
     - `object`
     - `array`
@@ -457,38 +453,38 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ zurück zum Anfang](#table-of-contents)**
 
-## References
+## Referenzen
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Use `const` for all of your references; avoid using `var`. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) Benutze `const` für alle Referenzen; Vermeide die Verwendung von `var`. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
-    > Why? This ensures that you can’t reassign your references, which can lead to bugs and difficult to comprehend code.
+    > Wieso? Es stellt sicher, dass man Referenzen nicht neu zuweisen kann. Das kann sonst zu Fehlern und schwer verständlichem Code führen.
 
     ```javascript
-    // bad
+    // schlecht
     var a = 1;
     var b = 2;
 
-    // good
+    // gut
     const a = 1;
     const b = 2;
     ```
 
   <a name="references--disallow-var"></a><a name="2.2"></a>
-  - [2.2](#references--disallow-var) If you must reassign references, use `let` instead of `var`. eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
+  - [2.2](#references--disallow-var) Wenn man eine Referenz neu zuweisen muss, sollte `let` an Stelle von `var` benutzt werden. eslint: [`no-var`](https://eslint.org/docs/rules/no-var.html)
 
-    > Why? `let` is block-scoped rather than function-scoped like `var`.
+    > Wieso? `let` ist block-scoped und nicht function-scoped wie `var`.
 
     ```javascript
-    // bad
+    // schlecht
     var count = 1;
     if (true){
         count += 1;
     }
 
-    // good
+    // gut
     let count = 1;
     if (true){
         count += 1;
@@ -496,25 +492,25 @@
     ```
 
   <a name="references--let-require"></a><a name="2.3"></a>
-  - [2.3](#references--let-require) Use `let` for `require()` imports in NodeJS.
+  - [2.3](#references--let-require) Benutze `let` für `require()` imports in NodeJS.
 
-    > Why? With `const` you can't assign anything to the variable later on and you cannot use the variable without explicitly initializing it. 
+    > Wieso? Mit `const` kann man die Import-Variable später nicht neu definieren falls nötig. Außerdemn kann die Variable nicht verwendet werden, ohne sie explizit zu inizialisieren. 
 
     ```javascript
-    // bad
+    // schlecht
     var x = require("x");
     const y = require("y");
     
-    // good
+    // gut
     let x = require("x");
     let y = require("y");
     ```
     
   <a name="references--block-scope"></a><a name="2.3"></a>
-  - [2.4](#references--block-scope) Note that both `let` and `const` are block-scoped.
+  - [2.4](#references--block-scope) Beachte, dass beide `let` und `const` block-scoped sind.
 
     ```javascript
-    // const and let only exist in the blocks they are defined in.
+    // const und let existieren nur in dem Block, in dem sie definiert wurden.
     {
         let a = 1;
         const b = 1;
@@ -525,150 +521,150 @@
     console.log(c); // 1
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ zurück zum Anfang](#table-of-contents)**
 
-## Objects
+## Objekte
 
   <a name="objects--no-new"></a><a name="3.1"></a>
-  - [3.1](#objects--no-new) Use the literal syntax for object creation. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) Benutze den "literal syntax" für die Erstellung von Objekten. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
-    // bad
+    // schlecht
     const item = new Object();
 
-    // good
+    // gut
     const item = {};
     ```
 
   <a name="es6-computed-properties"></a><a name="3.4"></a>
-  - [3.2](#es6-computed-properties) Use computed property names when creating objects with dynamic property names.
+  - [3.2](#es6-computed-properties) Verwende automatisch berechnete Eigenschaftsnamen, wenn Objekte mit dynamischen Eigenschaftennamen erstellt werden.
 
-    > Why? They allow you to define all the properties of an object in one place.
+    > Wieso? Sie erlauben es, alle Eigenschaften eines Objekts an einer Stelle zu definieren.
 
     ```javascript
 
     function getKey(k){
-        return `a key named ${k}`;
+        return `ein key mit dem Namen ${k}`;
     }
 
-    // bad
-    const obj = {
-        id: 5,
-        name: "foo"
-    };
-    obj[getKey("enabled")] = true;
-
-    // good
+    // schlecht
     const obj = {
         id: 5,
         name: "foo",
-        [getKey("enabled")]: true
+    };
+    obj[getKey("enabled")] = true;
+
+    // gut
+    const obj = {
+        id: 5,
+        name: "foo",
+        [getKey("enabled")]: true,
     };
     ```
 
   <a name="es6-object-shorthand"></a><a name="3.5"></a>
-  - [3.3](#es6-object-shorthand) Use object method shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
+  - [3.3](#es6-object-shorthand) Benutze Objekt Methoden shorthands. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     ```javascript
-    // bad
+    // schlecht
     const foo = {
         value: 1,
 
         addValue: function (value) {
             return foo.value + value;
-        }
+        },
     };
 
-    // good
+    // gut
     const foo = {
         value: 1,
 
         addValue(value) {
             return foo.value + value;
-        }
+        },
     };
     ```
 
   <a name="es6-object-concise"></a><a name="3.6"></a>
-  - [3.4](#es6-object-concise) Use property value shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
+  - [3.4](#es6-object-concise) Benutze Eigenschaftsnamen shorthands. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
-    > Why? It is shorter and descriptive.
+    > Wieso? Es ist kürzer und funktionsbeschreibend.
 
     ```javascript
     const foo = "bar";
 
-    // bad
+    // schlecht
     const obj = {
-        foo: foo
+        foo: foo,
     };
 
-    // good
+    // gut
     const obj = {
-        foo
+        foo,
     };
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
-  - [3.5](#objects--grouped-shorthand) Group your shorthand properties at the beginning of your object declaration.
+  - [3.5](#objects--grouped-shorthand) Gruppiere shorthand Eigenschaften am Anfang der Objekt Deklaration.
 
-    > Why? It’s easier to tell which properties are using the shorthand.
+    > Wieso? Man kann einfacher und schneller erkennen, welche Eigenschaften den shorthand verwenden.
 
     ```javascript
     const foo = "bar";
     const bar = "foo";
 
-    // bad
+    // schlecht
     const obj = {
         test: 1,
         key: 2,
         foo,
         abc: 3,
         xyz: 4,
-        bar
+        bar,
     };
 
-    // good
+    // gut
     const obj = {
         foo,
         bar,
         test: 1,
         key: 2,
         abc: 3,
-        xyz: 4
+        xyz: 4,
     };
     ```
 
   <a name="objects--quoted-props"></a><a name="3.8"></a>
   - [3.6](#objects--quoted-props) Only quote properties that are invalid identifiers. eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
 
-    > Why? In general it is subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+    > Wieso? In general it is subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
 
     ```javascript
-    // bad
+    // schlecht
     const bad = {
         "foo": 3,
         "bar": 4,
-        "data-foo": 5
+        "data-foo": 5,
     };
 
-    // good
+    // gut
     const good = {
         foo: 3,
         bar: 4,
-        "data-foo": 5
+        "data-foo": 5,
     };
     ```
 
   <a name="objects--prototype-builtins"></a>
   - [3.7](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
 
-    > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
+    > Wieso? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
 
     ```javascript
-    // bad
+    // schlecht
     console.log(object.hasOwnProperty(key));
 
-    // good
+    // gut
     console.log(Object.prototype.hasOwnProperty.call(object, key));
 
     // best
