@@ -5,6 +5,9 @@
         "node": true,                    // Node.js global variables and Node.js-specific rules
         "es6": true
     },
+    "parserOptions": {
+        "ecmaVersion": 11
+    },
     "rules": {
         /**
          * Strict mode
