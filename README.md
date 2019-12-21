@@ -1867,17 +1867,17 @@
     }
 
     // bad
-    const bar = function * (){
+    let bar = function * (){
         // ...
     };
 
     // bad
-    const baz = function *(){
+    let baz = function *(){
         // ...
     };
 
     // bad
-    const quux = function*(){
+    let quux = function* (){
         // ...
     };
 
@@ -1899,7 +1899,7 @@
     }
 
     // very bad
-    const foo = function
+    let foo = function
     *
     (){
         // ...
@@ -1911,7 +1911,7 @@
     }
 
     // good
-    const foo = function*(){
+    let foo = function*(){
         // ...
     };
     ```
