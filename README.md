@@ -498,7 +498,7 @@
   <a name="references--let-require"></a><a name="2.3"></a>
   - [2.3](#references--let-require) Use `let` for `require()` imports in NodeJS.
 
-    > Why? With `const` you can't assign anything to the variable later on and you cannot use the variable without explicitly initializing it. 
+    > Why? Modules are rather dynamic in nature. If you want to add functionality dynamically later on, it's easier if the module isn't imported as `const`. Also, in some cases `let` is faster than `const` when used on `require()` ([Source](https://stackoverflow.com/a/42767905/7575111)).
 
     ```javascript
     // bad
