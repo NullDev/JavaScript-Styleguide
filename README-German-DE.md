@@ -516,8 +516,8 @@
         const b = 1;
         var c = 1;
     }
-    console.log(a); // ReferenceError: a is not defined
-    console.log(b); // ReferenceError: b is not defined
+    console.log(a); // ReferenceError: a ist nicht definiert
+    console.log(b); // ReferenceError: b ist nicht definiert
     console.log(c); // 1
     ```
 
