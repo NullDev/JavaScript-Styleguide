@@ -1343,7 +1343,7 @@
     ```
 
   <a name="functions--signature-invocation-indentation"></a><a name="7.16"></a>
-  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
+  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself and without a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
 
     ```javascript
     // bad
@@ -1357,7 +1357,7 @@
     function foo(
         bar,
         baz,
-        quux,
+        quux
         ...
     ){
       // ...
@@ -1372,7 +1372,7 @@
     console.log(
         foo,
         bar,
-        baz,
+        baz
         ...
     );
     ```
@@ -1786,7 +1786,7 @@
   <a name="modules--multiline-imports-over-newlines"></a><a name="10.5"></a>
   - [10.5](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
 
-    > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
+    > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide.
 
     ```javascript
     // bad
@@ -1798,7 +1798,7 @@
         longNameB,
         longNameC,
         longNameD,
-        longNameE,
+        longNameE
     } = require("path");
     ```
 
@@ -3331,7 +3331,7 @@
     const x = [
         foo,
         bar,
-        baz,
+        baz
     ];
 
     // bad
