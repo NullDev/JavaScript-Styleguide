@@ -1267,7 +1267,7 @@
 
     ```javascript
     // bad
-    const f = function(){};
+    const f = function () {};
     const g = function (){};
     const h = function() {};
 
