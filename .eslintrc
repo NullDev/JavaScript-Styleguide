@@ -3,7 +3,9 @@
     "env": {                             // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
         "browser": true,                 // browser global variables
         "node": true,                    // Node.js global variables and Node.js-specific rules
-        "es6": true
+        "commonjs": true,                // CommonJS global variables and CommonJS scoping
+        "es2021": true,                  // ESNext support
+        "es6": true                      // enable all ECMAScript 6 features except for modules
     },
     "parser": "babel-eslint",            // npm install babel-eslint --save-dev
     "parserOptions": {
