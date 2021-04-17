@@ -1,12 +1,14 @@
-{
+{                                        // NullDev-Style ESLint Config: https://github.com/NullDevCo/JavaScript-Styleguide
     "plugins": [],
     "env": {                             // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
         "browser": true,                 // browser global variables
         "node": true,                    // Node.js global variables and Node.js-specific rules
         "es6": true
     },
+    "parser": "babel-eslint",            // npm install babel-eslint --save-dev
     "parserOptions": {
-        "ecmaVersion": 12
+        "ecmaVersion": 12,
+        "sourceType": "script"
     },
     "rules": {
         /**
