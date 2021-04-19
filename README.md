@@ -11,11 +11,13 @@
 ## Setup :gear:
 
 - Navigate inside your project
-- Install Babel-ESLint: <br>
+- Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
     $ `npm install @babel/eslint-parser --save-dev`
 - Get the config: <br>
     $ `wget https://raw.githubusercontent.com/NullDevCo/JavaScript-Styleguide/master/.eslintrc`
 - Done! :) 
+
+<sub>*) The rationale for using Babel-ESLint is that it supports the newest Stage-3 ECMAScript features.</sub>
 
 ## Table of Contents :bookmark_tabs:
 
