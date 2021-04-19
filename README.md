@@ -947,11 +947,11 @@
   <a name="strings--quotes"></a><a name="6.1"></a>
   - [6.1](#strings--quotes) Use double quotes `""` for strings instead of single quotes `''`. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
 
-    > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency. Here are some reasons for using double quotes: <br>
+    > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency (in favor of older projects). Here are some reasons for using double quotes: <br>
     > - Double quotes eliminate the need to escape apostrophes: `"I'm"` vs `'I\'m'`. 
     > - From a linguistic point of view, double quotes identify a passage of quoted text while single quotes are commonly used as a contraction. 
     > - Double quotes are used to define strings in many other languages. Single quotes are used to define `char`'s in some. 
-    > - JSON notation is written with double quotes as well. 
+    > - JSON Strings are only valid with double quotes. 
    
     ```javascript
     // bad
@@ -1046,9 +1046,9 @@
     const profileRegex = new RegExp(baseSite + "user\/(\w+)", "gi");
     
     // good
-    const uploadsRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)/gi,
-    const commentRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)(?:(?::)comment(\d+))/gi,
-    const profileRegex = /http(?:s?):\/\/website\.com\/user\/(\w+)/gi
+    const uploadsRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)/gi;
+    const commentRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)(?:(?::)comment(\d+))/gi;
+    const profileRegex = /http(?:s?):\/\/website\.com\/user\/(\w+)/gi;
     ```
 
 **[⬆ back to top](#table-of-contents-bookmark_tabs)**
