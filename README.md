@@ -151,7 +151,8 @@
      - [10.2](#modules--no-duplicate-imports) Duplicate imports
      - [10.3](#modules--no-mutable-exports) Mutable exports
      - [10.4](#modules--imports-first) Imports first
-     - [10.5](#modules--multiline-imports-over-newlines) Multiline imports
+     - [10.5](#modules--import-extensions) Imports extensions
+     - [10.6](#modules--multiline-imports-over-newlines) Multiline imports
 
      </details>
 
@@ -440,6 +441,7 @@
     - `null`
     - `undefined`
     - `symbol`
+    - `bigint`
 
     ```javascript
     const foo = 1;
@@ -450,7 +452,7 @@
     console.log(foo, bar); // => 1, 9
     ```
 
-    - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
+    - Symbols and BigInts cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
 
   <a name="types--complex"></a><a name="1.2"></a>
   - [1.2](#types--complex) **Complex**: When you access a complex type you work on a reference to its value.
@@ -880,7 +882,7 @@
   <a name="destructuring--object"></a><a name="5.1"></a>
   - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
-    > Why? Destructuring saves you from creating temporary references for those properties.
+    > Why? Destructuring saves you from creating temporary references for those properties, and from repetitive access of the object. Repeating object access creates more repetitive code, requires more reading, and creates more opportunities for mistakes. Destructuring objects also provides a single site of definition of the object structure that is used in the block, rather than requiring reading the entire block to determine what is used.
 
     ```javascript
     // bad
@@ -1794,9 +1796,26 @@
 
     foo.init();
     ```
-
-  <a name="modules--multiline-imports-over-newlines"></a><a name="10.5"></a>
-  - [10.5](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
+    
+  <a name="modules--import-extensions"></a>
+  - [10.5](#modules--import-extensions) Do not include JavaScript filename extensions
+ eslint: [`import/extensions`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md)
+    > Why? Including extensions inhibits refactoring, and inappropriately hardcodes implementation details of the module you're importing in every consumer.
+ 
+    ```javascript
+    // bad
+    import foo from "./foo.js";
+    import bar from "./bar.jsx";
+    import baz from "./baz/index.jsx";
+    
+    // good
+    import foo from "./foo";
+    import bar from "./bar";
+    import baz from "./baz";
+    ```
+    
+  <a name="modules--multiline-imports-over-newlines"></a><a name="10.6"></a>
+  - [10.6](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals. eslint: [`object-curly-newline`](https://eslint.org/docs/rules/object-curly-newline)
 
     > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide.
 
@@ -2017,7 +2036,7 @@
   <a name="variables--const-let-group"></a><a name="13.3"></a>
   - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
 
-    > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+    > Why? This is helpful when later on you might need to assign a variable depending on one of the previously assigned variables.
 
     ```javascript
     // bad
@@ -2226,7 +2245,7 @@
 ## Hoisting
 
   <a name="hoisting--about"></a><a name="14.1"></a>
-  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their closest enclosing function scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). It’s important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their closest enclosing function scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). It’s important to know why [typeof is no longer safe](https://web.archive.org/web/20200121061528/http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
     // this wouldn’t work (assuming there
