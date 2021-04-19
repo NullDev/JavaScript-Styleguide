@@ -1064,7 +1064,8 @@
     > - It requires all property names in an object literal to be unique. 
     > - Function parameter names must be unique as well. <br><br>
     > 
-    > Also you do not need to worry about browser compartibility. It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. [Read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) about strict mode and [why you should use it](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it).
+    > Also you do not need to worry about browser compartibility. It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. [Read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) about strict mode and [why you should use it](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it). <br><br>
+    > **Note:** Modules are exempt from this rule because they always run in strict-mode.
 
     ```javascript
     0    // bad
