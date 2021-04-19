@@ -466,7 +466,7 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## References
 
@@ -534,7 +534,7 @@
     console.log(c); // 1
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Objects
 
@@ -708,7 +708,7 @@
     const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Arrays
 
@@ -871,7 +871,7 @@
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Destructuring
 
@@ -940,7 +940,7 @@
     const { left, top } = processInput(input);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Strings
 
@@ -1051,7 +1051,7 @@
     const profileRegex = /http(?:s?):\/\/website\.com\/user\/(\w+)/gi
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Functions
 
@@ -1386,7 +1386,7 @@
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Arrow Functions
 
@@ -1547,7 +1547,7 @@
     )
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Classes & Constructors
 
@@ -1713,7 +1713,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Modules
 
@@ -1925,7 +1925,7 @@
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Properties
 
@@ -1973,7 +1973,7 @@
     const binary = 2 ** 10;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Variables
 
@@ -2218,7 +2218,7 @@
     let y = Math.floor(x);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Hoisting
 
@@ -2317,7 +2317,7 @@
 
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Comparison Operators & Equality
 
@@ -2497,7 +2497,7 @@
     const bar = a + b / c * d;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Blocks
 
@@ -2620,7 +2620,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Control Statements
 
@@ -2689,7 +2689,7 @@
     if (!isRunning) startRunning();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Comments
 
@@ -2839,7 +2839,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Whitespace
 
@@ -3321,7 +3321,7 @@
     ```
     <!-- markdownlint-enable MD012 -->
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Commas
 
@@ -3438,7 +3438,7 @@
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Semicolons
 
@@ -3487,7 +3487,7 @@
 
     [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214#7365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Type Casting & Coercion
 
@@ -3576,7 +3576,7 @@
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Naming Conventions
 
@@ -3840,7 +3840,7 @@
     if (isActive) doSomething();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Accessors
 
@@ -3909,7 +3909,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Events
 
@@ -3942,7 +3942,7 @@
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Standard Library
 
@@ -3982,7 +3982,7 @@
     Number.isFinite(parseInt("2e3", 10)); // true
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## jQuery
 
@@ -4118,14 +4118,14 @@
     });
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## ECMAScript 5 Compatibility
 
   <a name="es5-compat--kangax"></a><a name="28.1"></a>
   - [28.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)’s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 <a name="ecmascript-6-styles"></a>
 ## ECMAScript 6+ (ES 2015+) Styles
@@ -4153,7 +4153,7 @@
 
     > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Testing
 
@@ -4166,7 +4166,7 @@
     - 100% test coverage is a good goal to strive for, even if it’s not always practical to reach it.
     - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Performance
 
@@ -4181,7 +4181,7 @@
     - [Long String Concatenation](https://jsperf.com/ya-string-concat)
     - [Are JavaScript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Resources
 
@@ -4248,7 +4248,7 @@
     - [JavaScript Air](https://javascriptair.com/)
     - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Copyright
 
@@ -4258,10 +4258,14 @@
   <a name="copyright--license"></a><a name="33.2"></a>
   - [33.2](#copyright--license) It uses the same [License](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/LICENSE). 
 
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
+
 ## Amendments
 
   <a name="amendments--forking"></a><a name="34.1"></a>
   - [34.1](#amendments--forking) We encourage you to fork this guide and change the rules to fit your team’s style guide. :smile_cat:
+
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 <br><br><br>
 
