@@ -140,6 +140,7 @@
      - [9.4](#constructors--tostring) toString methods
      - [9.5](#constructors--no-useless) No empty constructors
      - [9.6](#classes--no-duplicate-members) No duplicate members
+     - [9.7](#classes--methods-use-this) `this` in Class-Methods
 
      </details>
 
@@ -1715,6 +1716,39 @@
     // good
     class Foo {
         bar(){ return 2; }
+    }
+    ```
+    
+  <a name="classes--methods-use-this"></a>
+  - [9.7](#classes--methods-use-this) Class methods should use `this` or be made into a static method unless an external library or framework requires to use specific non-static methods. Being an instance method should indicate that it behaves differently based on properties of the receiver. eslint: [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
+
+    ```javascript
+    // bad
+    class Foo {
+        bar(){
+            console.log("bar");
+        }
+    }
+
+    // good - this is used
+    class Foo {
+        bar(){
+            console.log(this.bar);
+        }
+    }
+
+    // good - constructor is exempt
+    class Foo {
+        constructor(){
+            // ...
+        }
+    }
+
+    // good - static methods aren't expected to use this
+    class Foo {
+        static bar(){
+            console.log("bar");
+        }
     }
     ```
 
