@@ -8,7 +8,16 @@
 
 </p>
 
-## Table of Contents
+## Setup :gear:
+
+- Navigate inside your project
+- Install Babel-ESLint: <br>
+    $ `npm install @babel/eslint-parser --save-dev`
+- Get the config: <br>
+    $ `wget https://raw.githubusercontent.com/NullDevCo/JavaScript-Styleguide/master/.eslintrc`
+- Done! :) 
+
+## Table of Contents :bookmark_tabs:
 
   1. :clipboard: [Types](#types)
      <details>
@@ -4194,7 +4203,6 @@
   - [32.3](#resources--tools) **Tools**
     - Code Style Linters
       - [ESlint](https://eslint.org/) - [NullDev Style .eslintrc](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/.eslintrc)
-      - [JSHint](http://jshint.com/) - [NullDev Style .jshintrc](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/.jshintrc)
 
   <a name="resources--further-reading"></a><a name="32.4"></a>
   - [32.4](#resources--further-reading) **Further Reading**
