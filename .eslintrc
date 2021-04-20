@@ -27,6 +27,12 @@
          */
         "no-var": 2,                        // http://eslint.org/docs/rules/no-var
         "prefer-const": 0,                  // http://eslint.org/docs/rules/prefer-const
+        "prefer-destructuring": [2, {       // http://eslint.org/docs/rules/prefer-destructuring
+            "array": true,
+            "object": true
+        }, {
+            "enforceForRenamedProperties": false
+        }],
         /**
          * Variables
          */
@@ -40,12 +46,13 @@
         /**
          * Possible errors
          */
-        "comma-dangle": ["error", "never"], // http://eslint.org/docs/rules/comma-dangle
+        "comma-dangle": [2, "never"],       // http://eslint.org/docs/rules/comma-dangle
         "no-cond-assign": [2, "always"],    // http://eslint.org/docs/rules/no-cond-assign
         "no-console": 0,                    // http://eslint.org/docs/rules/no-console
         "no-debugger": 1,                   // http://eslint.org/docs/rules/no-debugger
         "no-alert": 1,                      // http://eslint.org/docs/rules/no-alert
         "no-constant-condition": 1,         // http://eslint.org/docs/rules/no-constant-condition
+        "no-const-assign": 2,               // http://eslint.org/docs/rules/no-const-assign
         "no-dupe-keys": 2,                  // http://eslint.org/docs/rules/no-dupe-keys
         "no-duplicate-case": 2,             // http://eslint.org/docs/rules/no-duplicate-case
         "no-empty": 2,                      // http://eslint.org/docs/rules/no-empty
@@ -64,6 +71,9 @@
         /**
          * Best practices
          */
+        "array-callback-return": [2, {      // http://eslint.org/docs/rules/array-callback-return
+            "allowImplicit": true
+        }],
         "consistent-return": 1,             // http://eslint.org/docs/rules/consistent-return
         "curly": [2, "multi-line"],         // http://eslint.org/docs/rules/curly
         "default-case": 2,                  // http://eslint.org/docs/rules/default-case
@@ -72,6 +82,7 @@
         }],
         "eqeqeq": 2,                        // http://eslint.org/docs/rules/eqeqeq
         "guard-for-in": 0,                  // http://eslint.org/docs/rules/guard-for-in
+        "no-array-constructor": 2,          // http://eslint.org/docs/rules/no-array-constructor
         "no-caller": 2,                     // http://eslint.org/docs/rules/no-caller
         "no-else-return": 2,                // http://eslint.org/docs/rules/no-else-return
         "no-eq-null": 2,                    // http://eslint.org/docs/rules/no-eq-null
@@ -92,6 +103,7 @@
         "no-octal-escape": 2,               // http://eslint.org/docs/rules/no-octal-escape
         "no-param-reassign": 2,             // http://eslint.org/docs/rules/no-param-reassign
         "no-proto": 2,                      // http://eslint.org/docs/rules/no-proto
+        "no-prototype-builtins": 1,         // http://eslint.org/docs/rules/no-prototype-builtins
         "no-redeclare": 2,                  // http://eslint.org/docs/rules/no-redeclare
         "no-return-assign": 2,              // http://eslint.org/docs/rules/no-return-assign
         "no-script-url": 2,                 // http://eslint.org/docs/rules/no-script-url
@@ -102,11 +114,18 @@
         "radix": 2,                         // http://eslint.org/docs/rules/radix
         "vars-on-top": 2,                   // http://eslint.org/docs/rules/vars-on-top
         "wrap-iife": [2, "any"],            // http://eslint.org/docs/rules/wrap-iife
+        "object-shorthand": [2, "always", { // http://eslint.org/docs/rules/object-shorthand
+            "ignoreConstructors": true,
+            "avoidQuotes": true
+        }],
+        "quote-props": [2, "as-needed", {   // http://eslint.org/docs/rules/quote-props
+            "keywords": true
+        }],
         "yoda": 2,                          // http://eslint.org/docs/rules/yoda
         /**
          * Style
          */
-        "indent": ["error", 4, {            // http://eslint.org/docs/rules/indent
+        "indent": [2, 4, {                  // http://eslint.org/docs/rules/indent
             "SwitchCase": 1
         }],
         "brace-style": [2,                  // http://eslint.org/docs/rules/brace-style
