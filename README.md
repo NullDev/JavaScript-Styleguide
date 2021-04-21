@@ -257,23 +257,25 @@
      <summary>View contents</summary>
 
      - [19.1](#whitespace--spaces) Soft tabs
-     - [19.2](#whitespace--before-blocks) Before blocks
+     - [19.2](#whitespace--before-blocks) Space Before blocks
      - [19.3](#whitespace--around-keywords) Around keywords
      - [19.4](#whitespace--infix-ops) Infix operators
-     - [19.5](#whitespace--newline-at-end) End of file
-     - [19.6](#whitespace--chains) Chains
-     - [19.7](#whitespace--after-blocks) After blocks
-     - [19.8](#whitespace--padded-blocks) Padded blocks
-     - [19.9](#whitespace--in-parens) Inside parentheses
-     - [19.10](#whitespace--in-brackets) Inside brackets
-     - [19.11](#whitespace--in-braces) Inside curly braces
-     - [19.12](#whitespace--max-len) Line length
-     - [19.13](#whitespace--block-spacing) Block spacing
-     - [19.14](#whitespace--comma-spacing) Comma spacing
-     - [19.15](#whitespace--computed-property-spacing) Computed properties
-     - [19.17](#whitespace--key-spacing) Key spacing
-     - [19.18](#whitespace--no-trailing-spaces) Trailing spaces
-     - [19.19](#whitespace--no-multiple-empty-lines) Multiple empty lines 
+     - [19.5](#whitespace--lf-linebreaks) LF Line-breaks
+     - [19.6](#whitespace--newline-at-end) End of file
+     - [19.7](#whitespace--chains) Chains
+     - [19.8](#whitespace--after-blocks) After blocks
+     - [19.9](#whitespace--padded-blocks) Padded blocks
+     - [19.10](#whitespace--in-parens) Inside parentheses
+     - [19.11](#whitespace--in-brackets) Inside brackets
+     - [19.12](#whitespace--in-braces) Inside curly braces
+     - [19.13](#whitespace--max-len) Line length
+     - [19.14](#whitespace--block-spacing) Block spacing
+     - [19.15](#whitespace--comma-spacing) Comma spacing
+     - [19.16](#whitespace--computed-property-spacing) Computed properties
+     - [16.17](#whitespace--func-call-spacing) Function call spacing
+     - [19.18](#whitespace--key-spacing) Key spacing
+     - [19.19](#whitespace--no-trailing-spaces) No Trailing spaces
+     - [19.20](#whitespace--no-multiple-empty-lines) Multiple empty lines 
 
      </details>
 
@@ -3031,8 +3033,11 @@
     const x = y + 5;
     ```
 
-  <a name="whitespace--newline-at-end"></a><a name="19.5"></a>
-  - [19.5](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+  <a name="whitespace--lf-linebreaks"></a><a name="19.5"></a>
+  - [19.5](#whitespace--lf-linebreaks) Use Unix/Linux-Style Linebreaks - `LF` (`\n`) instead of `CR` + `LF` (`\r\n`). eslint: [`linebreak-style`](https://eslint.org/docs/rules/linebreak-style)
+
+  <a name="whitespace--newline-at-end"></a><a name="19.6"></a>
+  - [19.6](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://eslint.org/docs/rules/eol-last)
 
     > Why? Because that's how the POSIX standard defines a line. [Read more...](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206)
 
@@ -3058,8 +3063,8 @@
     module.exports = foo;↵
     ```
 
-  <a name="whitespace--chains"></a><a name="19.6"></a>
-  - [19.6](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
+  <a name="whitespace--chains"></a><a name="19.7"></a>
+  - [19.7](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
     emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
@@ -3102,8 +3107,8 @@
     const leds = stage.selectAll(".led").data(data);
     ```
 
-  <a name="whitespace--after-blocks"></a><a name="19.7"></a>
-  - [19.7](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement.
+  <a name="whitespace--after-blocks"></a><a name="19.8"></a>
+  - [19.8](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement.
 
     ```javascript
     // bad
@@ -3160,8 +3165,8 @@
     return arr;
     ```
 
-  <a name="whitespace--padded-blocks"></a><a name="19.8"></a>
-  - [19.8](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html)
+  <a name="whitespace--padded-blocks"></a><a name="19.9"></a>
+  - [19.9](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html)
 
     ```javascript
     // bad
@@ -3203,8 +3208,8 @@
     }
     ```
 
-  <a name="whitespace--in-parens"></a><a name="19.9"></a>
-  - [19.9](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html)
+  <a name="whitespace--in-parens"></a><a name="19.10"></a>
+  - [19.10](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html)
 
     ```javascript
     // bad
@@ -3228,8 +3233,8 @@
     }
     ```
 
-  <a name="whitespace--in-brackets"></a><a name="19.10"></a>
-  - [19.10](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
+  <a name="whitespace--in-brackets"></a><a name="19.11"></a>
+  - [19.11](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
 
     ```javascript
     // bad
@@ -3241,8 +3246,8 @@
     console.log(foo[0]);
     ```
 
-  <a name="whitespace--in-braces"></a><a name="19.11"></a>
-  - [19.11](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html)
+  <a name="whitespace--in-braces"></a><a name="19.12"></a>
+  - [19.12](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html)
 
     ```javascript
     // bad
@@ -3252,8 +3257,8 @@
     const foo = { foo: "bar" };
     ```
 
-  <a name="whitespace--max-len"></a><a name="19.12"></a>
-  - [19.12](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html)
+  <a name="whitespace--max-len"></a><a name="19.13"></a>
+  - [19.13](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html)
 
     > Why? This ensures readability and maintainability.
 
@@ -3286,8 +3291,8 @@
     });
     ```
 
-  <a name="whitespace--block-spacing"></a><a name="19.13"></a>
-  - [19.13](#whitespace--block-spacing) Require consistent spacing inside an open block token and the next token on the same line. This rule also enforces consistent spacing inside a close block token and previous token on the same line. eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
+  <a name="whitespace--block-spacing"></a><a name="19.14"></a>
+  - [19.14](#whitespace--block-spacing) Require consistent spacing inside an open block token and the next token on the same line. This rule also enforces consistent spacing inside a close block token and previous token on the same line. eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
 
     ```javascript
     // bad
@@ -3299,8 +3304,8 @@
     if (foo){ bar = 0; }
     ```
 
-  <a name="whitespace--comma-spacing"></a><a name="19.14"></a>
-  - [19.14](#whitespace--comma-spacing) Avoid spaces before commas and require a space after commas. eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
+  <a name="whitespace--comma-spacing"></a><a name="19.15"></a>
+  - [19.15](#whitespace--comma-spacing) Avoid spaces before commas and require a space after commas. eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
 
     ```javascript
     // bad
@@ -3312,8 +3317,8 @@
     let arr = [1, 2];
     ```
 
-  <a name="whitespace--computed-property-spacing"></a><a name="19.15"></a>
-  - [19.15](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+  <a name="whitespace--computed-property-spacing"></a><a name="19.16"></a>
+  - [19.16](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
     ```javascript
     // bad
@@ -3329,8 +3334,8 @@
     obj[foo[bar]]
     ```
 
-  <a name="whitespace--func-call-spacing"></a><a name="19.16"></a>
-  - [19.16](#whitespace--func-call-spacing) Avoid spacing between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+  <a name="whitespace--func-call-spacing"></a><a name="19.17"></a>
+  - [19.17](#whitespace--func-call-spacing) Avoid spacing between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
 
     ```javascript
     // bad
@@ -3343,8 +3348,8 @@
     func();
     ```
 
-  <a name="whitespace--key-spacing"></a><a name="19.17"></a>
-  - [19.17](#whitespace--key-spacing) Enforce spacing between keys and values in object literal properties. eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
+  <a name="whitespace--key-spacing"></a><a name="19.18"></a>
+  - [19.18](#whitespace--key-spacing) Enforce spacing between keys and values in object literal properties. eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
 
     ```javascript
     // bad
@@ -3355,11 +3360,11 @@
     let obj = { "foo": 42 };
     ```
 
-  <a name="whitespace--no-trailing-spaces"></a><a name="19.18"></a>
-  - [19.18](#whitespace--no-trailing-spaces) Avoid trailing spaces at the end of lines. eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
+  <a name="whitespace--no-trailing-spaces"></a><a name="19.19"></a>
+  - [19.19](#whitespace--no-trailing-spaces) Avoid trailing spaces at the end of lines. eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
 
-  <a name="whitespace--no-multiple-empty-lines"></a><a name="19.19"></a>
-  - [19.19](#whitespace--no-multiple-empty-lines) Avoid multiple empty lines and only allow one newline at the end of files. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+  <a name="whitespace--no-multiple-empty-lines"></a><a name="19.20"></a>
+  - [19.20](#whitespace--no-multiple-empty-lines) Avoid multiple empty lines and only allow one newline at the end of files. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
     <!-- markdownlint-disable MD012 -->
     ```javascript
