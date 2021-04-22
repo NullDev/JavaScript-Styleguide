@@ -1,5 +1,5 @@
 {                                           // NullDev-Style ESLint Config: https://github.com/NullDevCo/JavaScript-Styleguide
-    "plugins": [],
+    "plugins": [],                          // Additional ESLint Plugins
     "env": {                                // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
         "browser": true,                    // browser global variables
         "node": true,                       // Node.js global variables and Node.js-specific rules
@@ -17,6 +17,10 @@
             ]
         }
     },
+    "ignorePatterns": [                     // Ignore dist folders and dependencies
+        "dist",
+        "node_modules"
+    ],
     "rules": {
         /**
          * Strict mode
