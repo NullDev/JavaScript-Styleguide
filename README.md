@@ -3556,7 +3556,9 @@
   - [22.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
 
   <a name="coercion--strings"></a><a name="22.2"></a>
-  - [22.2](#coercion--strings) Strings: eslint: [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+  - [22.2](#coercion--strings) Strings: Prefer [`String()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) over [`.toString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) eslint: [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+
+    > Why? `.toString()` is a prototype of `Number`. `String()` on the other hand, is globally available and thus allows casting of any type. Also, `.toString()` can be overridden as seen in [section 9.4](#constructors--tostring)
 
     ```javascript
     // => this.reviewScore = 9;
@@ -3575,7 +3577,9 @@
     ```
 
   <a name="coercion--numbers"></a><a name="22.3"></a>
-  - [22.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+  - [22.3](#coercion--numbers) Numbers: Use [`Number()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) for type casting and [`parseInt()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) only with a radix for parsing strings. Do prefer `Number()` over `parseInt()` though. eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+
+    > Why? Mostly because of the same reasons listed in [the section above](#coercion--strings). Also, since `parseInt()` always expects a string, it does show odd behaviour when parsing very small numbers ([source](https://dmitripavlutin.com/parseint-mystery-javascript/))
 
     ```javascript
     const inputValue = "4";
@@ -3592,7 +3596,7 @@
     // bad
     const val = parseInt(inputValue);
 
-    // good
+    // best
     const val = Number(inputValue);
 
     // good
