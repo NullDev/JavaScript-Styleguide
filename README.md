@@ -12,7 +12,7 @@
 
 - Navigate inside your project
 - Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
-    $ `npm install @babel/eslint-parser --save-dev`
+    $ `npm install @babel/eslint-parser @babel/core eslint --save-dev`
 - Get the config: <br>
     $ `wget https://raw.githubusercontent.com/NullDevCo/JavaScript-Styleguide/master/.eslintrc`
 - Done! :) 
