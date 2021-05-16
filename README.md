@@ -306,6 +306,7 @@
      - [22.4](#coercion--comment-deviations) Deviations
      - [22.5](#coercion--bitwise) Bitwise
      - [22.6](#coercion--booleans) Booleans
+     - [22.7](#coercion--valid-typeof) Valid Typeof
 
      </details>
 
@@ -3639,6 +3640,19 @@
 
     // best
     const hasAge = !!age;
+    ```
+
+  <a name="coercion--valid-typeof"></a><a name="22.6"></a>
+  - [22.6](#coercion--valid-typeof) Only compare returned strings by `typeof` to valid strings: eslint: [`valid-typeof`](https://eslint.org/docs/rules/valid-typeof)
+
+    ```javascript
+    
+    // bad - will be prevented by linter
+    typeof foo === "strnig";
+    
+    // good
+    typeof foo === "string";
+    typeof bar === typeof foo;
     ```
 
 **[⬆ back to top](#table-of-contents-bookmark_tabs)**
