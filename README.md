@@ -4273,10 +4273,12 @@
     - [More on ES6 Features](https://github.com/lukehoban/es6features/)
     - [Useful JavaScript snippets that you can understand in 30 seconds](https://github.com/30-seconds/30-seconds-of-code)
     - [Common JS interview questions (test yourself here)](https://github.com/30-seconds/30-seconds-of-interviews)
+    - [Common JS Algorithms and Data Structures](https://github.com/trekhleb/javascript-algorithms)
 
   <a name="resources--read-this"></a><a name="32.2"></a>
   - [32.2](#resources--read-this) **Read This**
     - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
+    - [NodeJS Best practices](https://github.com/goldbergyoni/nodebestpractices)
 
   <a name="resources--tools"></a><a name="32.3"></a>
   - [32.3](#resources--tools) **Tools**
