@@ -688,12 +688,9 @@
     // good
     console.log(Object.prototype.hasOwnProperty.call(object, key));
 
-    // best
-    const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
-    /* or */
-    let has = require("has"); // https://www.npmjs.com/package/has
-    // ...
-    console.log(has.call(object, key));
+    // best - Stage 3 Proposal:
+    // https://github.com/tc39/proposal-accessible-object-hasownproperty
+    Object.hasOwn(object, key);
     ```
 
   <a name="objects--rest-spread"></a>
