@@ -683,10 +683,10 @@
 
     ```javascript
     // bad
-    console.log(object.hasOwnProperty(key));
+    object.hasOwnProperty(key);
 
     // good
-    console.log(Object.prototype.hasOwnProperty.call(object, key));
+    Object.prototype.hasOwnProperty.call(object, key);
 
     // best - Stage 3 Proposal:
     // https://github.com/tc39/proposal-accessible-object-hasownproperty
