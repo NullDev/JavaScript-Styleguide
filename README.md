@@ -8,7 +8,11 @@
 
 </p>
 
+---
+
 ## Setup :gear:
+
+### To integrate into your own project:
 
 - Navigate inside your project
 - Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
@@ -18,6 +22,16 @@
 - Done! :) 
 
 <sub>*) The rationale for using Babel-ESLint is that it supports the newest Stage-3 ECMAScript features.</sub>
+
+### Or use the [NullDev Project Template](https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template) ...
+
+... with already preset config files and project structure
+
+[DOWNLOAD](https://downgit.github.io/#/home?url=https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template)
+
+$ `npm i` - and you're ready to go!
+
+---
 
 ## Table of Contents :bookmark_tabs:
 
