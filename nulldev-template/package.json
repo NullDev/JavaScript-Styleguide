@@ -1,0 +1,26 @@
+{
+  "name": "nulldev-template",
+  "version": "1.0.0",
+  "description": "A NodeJS Project template",
+  "main": "src/app.js",
+  "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "start": "npm run lint && NODE_ENV=development node src/app.js",
+    "prod": "NODE_ENV=production node ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "NullDev",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.3",
+    "@types/node": "^15.6.1",
+    "eslint": "^7.27.0",
+    "jsdoc-strip-async-await": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=15.0.0"
+  }
+}
