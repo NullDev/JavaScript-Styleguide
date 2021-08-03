@@ -1774,7 +1774,7 @@ $ `npm i` - and you're ready to go!
   <a name="modules--use-them"></a><a name="10.1"></a>
   - [10.1](#modules--use-them) Stick to CommonJS Imports (RequireJS / module.exports).
 
-    > Why? Not many of the current browser engines implements import/export from the ES6 standard. In NodeJS, require() is still the standard way of importing modules. 
+    > Why? Not many of the current browser engines implements import/export from the ES6 standard. In NodeJS, `require()` is still the standard way of importing modules. Plus, in NodeJS you can make use of dynamic module loading and [Require's API's](https://requirejs.org/docs/api.html#config) in general, where you can control caching as well. 
 
     ```javascript
     // bad
