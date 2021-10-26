@@ -8,7 +8,33 @@
 
 </p>
 
-## Table of Contents
+---
+
+## Setup :gear:
+
+### To integrate into your own project:
+
+- Make sure ESLint is installed. For VSCode, [download the extension here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- Navigate inside your project
+- Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
+    $ `npm install @babel/eslint-parser @babel/core eslint --save-dev`
+- Get the config: <br>
+    $ `wget https://raw.githubusercontent.com/NullDevCo/JavaScript-Styleguide/master/.eslintrc`
+- Done! :) 
+
+<sub>*) The rationale for using Babel-ESLint is that it supports the newest Stage-3 ECMAScript features.</sub>
+
+### Or use the [NullDev Project Template](https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template) ...
+
+... with already preset config files and project structure
+
+[DOWNLOAD](https://downgit.github.io/#/home?url=https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template)
+
+$ `npm i` - and you're ready to go!
+
+---
+
+## Table of Contents :bookmark_tabs:
 
   1. :clipboard: [Types](#types)
      <details>
@@ -129,6 +155,7 @@
      - [9.4](#constructors--tostring) toString methods
      - [9.5](#constructors--no-useless) No empty constructors
      - [9.6](#classes--no-duplicate-members) No duplicate members
+     - [9.7](#classes--methods-use-this) `this` in Class-Methods
 
      </details>
 
@@ -140,7 +167,8 @@
      - [10.2](#modules--no-duplicate-imports) Duplicate imports
      - [10.3](#modules--no-mutable-exports) Mutable exports
      - [10.4](#modules--imports-first) Imports first
-     - [10.5](#modules--multiline-imports-over-newlines) Multiline imports
+     - [10.5](#modules--import-extensions) Imports extensions
+     - [10.6](#modules--multiline-imports-over-newlines) Multiline imports
 
      </details>
 
@@ -244,23 +272,25 @@
      <summary>View contents</summary>
 
      - [19.1](#whitespace--spaces) Soft tabs
-     - [19.2](#whitespace--before-blocks) Before blocks
+     - [19.2](#whitespace--before-blocks) Space Before blocks
      - [19.3](#whitespace--around-keywords) Around keywords
      - [19.4](#whitespace--infix-ops) Infix operators
-     - [19.5](#whitespace--newline-at-end) End of file
-     - [19.6](#whitespace--chains) Chains
-     - [19.7](#whitespace--after-blocks) After blocks
-     - [19.8](#whitespace--padded-blocks) Padded blocks
-     - [19.9](#whitespace--in-parens) Inside parentheses
-     - [19.10](#whitespace--in-brackets) Inside brackets
-     - [19.11](#whitespace--in-braces) Inside curly braces
-     - [19.12](#whitespace--max-len) Line length
-     - [19.13](#whitespace--block-spacing) Block spacing
-     - [19.14](#whitespace--comma-spacing) Comma spacing
-     - [19.15](#whitespace--computed-property-spacing) Computed properties
-     - [19.17](#whitespace--key-spacing) Key spacing
-     - [19.18](#whitespace--no-trailing-spaces) Trailing spaces
-     - [19.19](#whitespace--no-multiple-empty-lines) Multiple empty lines 
+     - [19.5](#whitespace--lf-linebreaks) LF Line-breaks
+     - [19.6](#whitespace--newline-at-end) End of file
+     - [19.7](#whitespace--chains) Chains
+     - [19.8](#whitespace--after-blocks) After blocks
+     - [19.9](#whitespace--padded-blocks) Padded blocks
+     - [19.10](#whitespace--in-parens) Inside parentheses
+     - [19.11](#whitespace--in-brackets) Inside brackets
+     - [19.12](#whitespace--in-braces) Inside curly braces
+     - [19.13](#whitespace--max-len) Line length
+     - [19.14](#whitespace--block-spacing) Block spacing
+     - [19.15](#whitespace--comma-spacing) Comma spacing
+     - [19.16](#whitespace--computed-property-spacing) Computed properties
+     - [16.17](#whitespace--func-call-spacing) Function call spacing
+     - [19.18](#whitespace--key-spacing) Key spacing
+     - [19.19](#whitespace--no-trailing-spaces) No Trailing spaces
+     - [19.20](#whitespace--no-multiple-empty-lines) Multiple empty lines 
 
      </details>
 
@@ -291,6 +321,7 @@
      - [22.4](#coercion--comment-deviations) Deviations
      - [22.5](#coercion--bitwise) Bitwise
      - [22.6](#coercion--booleans) Booleans
+     - [22.7](#coercion--valid-typeof) Valid Typeof
 
      </details>
 
@@ -429,6 +460,7 @@
     - `null`
     - `undefined`
     - `symbol`
+    - `bigint`
 
     ```javascript
     const foo = 1;
@@ -439,7 +471,7 @@
     console.log(foo, bar); // => 1, 9
     ```
 
-    - Symbols cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
+    - Symbols and BigInts cannot be faithfully polyfilled, so they should not be used when targeting browsers/environments that don't support them natively.
 
   <a name="types--complex"></a><a name="1.2"></a>
   - [1.2](#types--complex) **Complex**: When you access a complex type you work on a reference to its value.
@@ -457,7 +489,7 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## References
 
@@ -525,7 +557,7 @@
     console.log(c); // 1
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Objects
 
@@ -666,17 +698,14 @@
 
     ```javascript
     // bad
-    console.log(object.hasOwnProperty(key));
+    object.hasOwnProperty(key);
 
     // good
-    console.log(Object.prototype.hasOwnProperty.call(object, key));
+    Object.prototype.hasOwnProperty.call(object, key);
 
-    // best
-    const has = Object.prototype.hasOwnProperty; // cache the lookup once, in module scope.
-    /* or */
-    let has = require("has"); // https://www.npmjs.com/package/has
-    // ...
-    console.log(has.call(object, key));
+    // best - Stage 3 Proposal:
+    // https://github.com/tc39/proposal-accessible-object-hasownproperty
+    Object.hasOwn(object, key);
     ```
 
   <a name="objects--rest-spread"></a>
@@ -699,7 +728,7 @@
     const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Arrays
 
@@ -862,14 +891,14 @@
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Destructuring
 
   <a name="destructuring--object"></a><a name="5.1"></a>
   - [5.1](#destructuring--object) Use object destructuring when accessing and using multiple properties of an object. eslint: [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
 
-    > Why? Destructuring saves you from creating temporary references for those properties.
+    > Why? Destructuring saves you from creating temporary references for those properties, and from repetitive access of the object. Repeating object access creates more repetitive code, requires more reading, and creates more opportunities for mistakes. Destructuring objects also provides a single site of definition of the object structure that is used in the block, rather than requiring reading the entire block to determine what is used.
 
     ```javascript
     // bad
@@ -931,18 +960,18 @@
     const { left, top } = processInput(input);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Strings
 
   <a name="strings--quotes"></a><a name="6.1"></a>
   - [6.1](#strings--quotes) Use double quotes `""` for strings instead of single quotes `''`. eslint: [`quotes`](https://eslint.org/docs/rules/quotes.html)
 
-    > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency. Here are some reasons for using double quotes: <br>
+    > Why? While other Styleguides may enforce single quotes, they mostly do it because of consistency (in favor of older projects). Here are some reasons for using double quotes: <br>
     > - Double quotes eliminate the need to escape apostrophes: `"I'm"` vs `'I\'m'`. 
     > - From a linguistic point of view, double quotes identify a passage of quoted text while single quotes are commonly used as a contraction. 
     > - Double quotes are used to define strings in many other languages. Single quotes are used to define `char`'s in some. 
-    > - JSON notation is written with double quotes as well. 
+    > - JSON Strings are only valid with double quotes. 
    
     ```javascript
     // bad
@@ -1037,12 +1066,12 @@
     const profileRegex = new RegExp(baseSite + "user\/(\w+)", "gi");
     
     // good
-    const uploadsRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)/gi,
-    const commentRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)(?:(?::)comment(\d+))/gi,
-    const profileRegex = /http(?:s?):\/\/website\.com\/user\/(\w+)/gi
+    const uploadsRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)/gi;
+    const commentRegex = /http(?:s?):\/\/website\.com\/(?:top|new|user\/\w+\/(?:uploads|likes))(?:(?:\/\w+)?)\/(\d+)(?:(?::)comment(\d+))/gi;
+    const profileRegex = /http(?:s?):\/\/website\.com\/user\/(\w+)/gi;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Functions
 
@@ -1055,7 +1084,8 @@
     > - It requires all property names in an object literal to be unique. 
     > - Function parameter names must be unique as well. <br><br>
     > 
-    > Also you do not need to worry about browser compartibility. It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. [Read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) about strict mode and [why you should use it](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it).
+    > Also you do not need to worry about browser compartibility. It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. [Read more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) about strict mode and [why you should use it](https://stackoverflow.com/questions/1335851/what-does-use-strict-do-in-javascript-and-what-is-the-reasoning-behind-it). <br><br>
+    > **Note:** Modules are exempt from this rule because they always run in strict-mode.
 
     ```javascript
     0    // bad
@@ -1267,7 +1297,7 @@
 
     ```javascript
     // bad
-    const f = function(){};
+    const f = function () {};
     const g = function (){};
     const h = function() {};
 
@@ -1343,7 +1373,7 @@
     ```
 
   <a name="functions--signature-invocation-indentation"></a><a name="7.16"></a>
-  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself, with a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
+  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself and without a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
 
     ```javascript
     // bad
@@ -1357,7 +1387,7 @@
     function foo(
         bar,
         baz,
-        quux,
+        quux
         ...
     ){
       // ...
@@ -1372,12 +1402,12 @@
     console.log(
         foo,
         bar,
-        baz,
+        baz
         ...
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Arrow Functions
 
@@ -1538,7 +1568,7 @@
     )
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Classes & Constructors
 
@@ -1703,15 +1733,48 @@
         bar(){ return 2; }
     }
     ```
+    
+  <a name="classes--methods-use-this"></a><a name="9.7"></a>
+  - [9.7](#classes--methods-use-this) Class methods should use `this` or be made into a static method unless an external library or framework requires to use specific non-static methods. Being an instance method should indicate that it behaves differently based on properties of the receiver. eslint: [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
 
-**[⬆ back to top](#table-of-contents)**
+    ```javascript
+    // bad
+    class Foo {
+        bar(){
+            console.log("bar");
+        }
+    }
+
+    // good - this is used
+    class Foo {
+        bar(){
+            console.log(this.bar);
+        }
+    }
+
+    // good - constructor is exempt
+    class Foo {
+        constructor(){
+            // ...
+        }
+    }
+
+    // good - static methods aren't expected to use this
+    class Foo {
+        static bar(){
+            console.log("bar");
+        }
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Modules
 
   <a name="modules--use-them"></a><a name="10.1"></a>
   - [10.1](#modules--use-them) Stick to CommonJS Imports (RequireJS / module.exports).
 
-    > Why? Not many of the current browser engines implements import/export from the ES6 standard. In NodeJS, require() is still the standard way of importing modules. 
+    > Why? Not many of the current browser engines implements import/export from the ES6 standard. In NodeJS, `require()` is still the standard way of importing modules. Plus, in NodeJS you can make use of dynamic module loading and [Require's API's](https://requirejs.org/docs/api.html#config) in general, where you can control caching as well. 
 
     ```javascript
     // bad
@@ -1782,11 +1845,28 @@
 
     foo.init();
     ```
+    
+  <a name="modules--import-extensions"></a>
+  - [10.5](#modules--import-extensions) Do not include JavaScript filename extensions
+ eslint: [`import/extensions`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md)
+    > Why? Including extensions inhibits refactoring, and inappropriately hardcodes implementation details of the module you're importing in every consumer.
+ 
+    ```javascript
+    // bad
+    import foo from "./foo.js";
+    import bar from "./bar.jsx";
+    import baz from "./baz/index.jsx";
+    
+    // good
+    import foo from "./foo";
+    import bar from "./bar";
+    import baz from "./baz";
+    ```
+    
+  <a name="modules--multiline-imports-over-newlines"></a><a name="10.6"></a>
+  - [10.6](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals. eslint: [`object-curly-newline`](https://eslint.org/docs/rules/object-curly-newline)
 
-  <a name="modules--multiline-imports-over-newlines"></a><a name="10.5"></a>
-  - [10.5](#modules--multiline-imports-over-newlines) Multiline imports should be indented just like multiline array and object literals.
-
-    > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide, as do the trailing commas.
+    > Why? The curly braces follow the same indentation rules as every other curly brace block in the style guide.
 
     ```javascript
     // bad
@@ -1798,7 +1878,7 @@
         longNameB,
         longNameC,
         longNameD,
-        longNameE,
+        longNameE
     } = require("path");
     ```
 
@@ -1916,7 +1996,7 @@
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Properties
 
@@ -1964,7 +2044,7 @@
     const binary = 2 ** 10;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Variables
 
@@ -2005,7 +2085,7 @@
   <a name="variables--const-let-group"></a><a name="13.3"></a>
   - [13.3](#variables--const-let-group) Group all your `const`s and then group all your `let`s.
 
-    > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+    > Why? This is helpful when later on you might need to assign a variable depending on one of the previously assigned variables.
 
     ```javascript
     // bad
@@ -2209,12 +2289,12 @@
     let y = Math.floor(x);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Hoisting
 
   <a name="hoisting--about"></a><a name="14.1"></a>
-  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their closest enclosing function scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). It’s important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#hoisting--about) `var` declarations get hoisted to the top of their closest enclosing function scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone). It’s important to know why [typeof is no longer safe](https://web.archive.org/web/20200121061528/http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
 
     ```javascript
     // this wouldn’t work (assuming there
@@ -2308,7 +2388,7 @@
 
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Comparison Operators & Equality
 
@@ -2488,7 +2568,7 @@
     const bar = a + b / c * d;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Blocks
 
@@ -2611,7 +2691,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Control Statements
 
@@ -2680,7 +2760,7 @@
     if (!isRunning) startRunning();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Comments
 
@@ -2830,7 +2910,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Whitespace
 
@@ -2966,8 +3046,11 @@
     const x = y + 5;
     ```
 
-  <a name="whitespace--newline-at-end"></a><a name="19.5"></a>
-  - [19.5](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://github.com/eslint/eslint/blob/master/docs/rules/eol-last.md)
+  <a name="whitespace--lf-linebreaks"></a><a name="19.5"></a>
+  - [19.5](#whitespace--lf-linebreaks) Use Unix/Linux-Style Linebreaks - `LF` (`\n`) instead of `CR` + `LF` (`\r\n`). eslint: [`linebreak-style`](https://eslint.org/docs/rules/linebreak-style)
+
+  <a name="whitespace--newline-at-end"></a><a name="19.6"></a>
+  - [19.6](#whitespace--newline-at-end) End files with a single newline character. eslint: [`eol-last`](https://eslint.org/docs/rules/eol-last)
 
     > Why? Because that's how the POSIX standard defines a line. [Read more...](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206)
 
@@ -2993,8 +3076,8 @@
     module.exports = foo;↵
     ```
 
-  <a name="whitespace--chains"></a><a name="19.6"></a>
-  - [19.6](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
+  <a name="whitespace--chains"></a><a name="19.7"></a>
+  - [19.7](#whitespace--chains) Use indentation when making long method chains (more than 2 method chains). Use a leading dot, which
     emphasizes that the line is a method call, not a new statement. eslint: [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call) [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
 
     ```javascript
@@ -3020,7 +3103,7 @@
     // bad
     const leds = stage.selectAll(".led").data(data).enter().append("svg:svg").classed("led", true)
         .attr("width", (radius + margin) * 2).append("svg:g")
-        .attr("transform", `translate(${radius + margin},${radius + margin})`)
+        .attr("transform", `translate(${radius + margin}, ${radius + margin})`)
         .call(tron.led);
 
     // good
@@ -3030,15 +3113,15 @@
             .classed("led", true)
             .attr("width", (radius + margin) * 2)
         .append("svg:g")
-            .attr("transform", `translate(${radius + margin},${radius + margin})`)
+            .attr("transform", `translate(${radius + margin}, ${radius + margin})`)
             .call(tron.led);
 
     // good
     const leds = stage.selectAll(".led").data(data);
     ```
 
-  <a name="whitespace--after-blocks"></a><a name="19.7"></a>
-  - [19.7](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement.
+  <a name="whitespace--after-blocks"></a><a name="19.8"></a>
+  - [19.8](#whitespace--after-blocks) Leave a blank line after blocks and before the next statement.
 
     ```javascript
     // bad
@@ -3059,7 +3142,7 @@
         foo(){
         },
         bar(){
-        },
+        }
     };
     return obj;
 
@@ -3069,7 +3152,7 @@
         },
 
         bar(){
-        },
+        }
     };
 
     return obj;
@@ -3079,7 +3162,7 @@
         function foo(){
         },
         function bar(){
-        },
+        }
     ];
     return arr;
 
@@ -3089,14 +3172,14 @@
         },
 
         function bar(){
-        },
+        }
     ];
 
     return arr;
     ```
 
-  <a name="whitespace--padded-blocks"></a><a name="19.8"></a>
-  - [19.8](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html)
+  <a name="whitespace--padded-blocks"></a><a name="19.9"></a>
+  - [19.9](#whitespace--padded-blocks) Do not pad your blocks with blank lines. eslint: [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks.html)
 
     ```javascript
     // bad
@@ -3138,8 +3221,8 @@
     }
     ```
 
-  <a name="whitespace--in-parens"></a><a name="19.9"></a>
-  - [19.9](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html)
+  <a name="whitespace--in-parens"></a><a name="19.10"></a>
+  - [19.10](#whitespace--in-parens) Do not add spaces inside parentheses. eslint: [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens.html)
 
     ```javascript
     // bad
@@ -3163,8 +3246,8 @@
     }
     ```
 
-  <a name="whitespace--in-brackets"></a><a name="19.10"></a>
-  - [19.10](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
+  <a name="whitespace--in-brackets"></a><a name="19.11"></a>
+  - [19.11](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing.html)
 
     ```javascript
     // bad
@@ -3176,8 +3259,8 @@
     console.log(foo[0]);
     ```
 
-  <a name="whitespace--in-braces"></a><a name="19.11"></a>
-  - [19.11](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html)
+  <a name="whitespace--in-braces"></a><a name="19.12"></a>
+  - [19.12](#whitespace--in-braces) Add spaces inside curly braces. eslint: [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing.html)
 
     ```javascript
     // bad
@@ -3187,8 +3270,8 @@
     const foo = { foo: "bar" };
     ```
 
-  <a name="whitespace--max-len"></a><a name="19.12"></a>
-  - [19.12](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html)
+  <a name="whitespace--max-len"></a><a name="19.13"></a>
+  - [19.13](#whitespace--max-len) Avoid having lines of code that are longer than 100 characters (including whitespace). Note: per [above](#strings--line-length), long strings are exempt from this rule, and should not be broken up. eslint: [`max-len`](https://eslint.org/docs/rules/max-len.html)
 
     > Why? This ensures readability and maintainability.
 
@@ -3221,8 +3304,8 @@
     });
     ```
 
-  <a name="whitespace--block-spacing"></a><a name="19.13"></a>
-  - [19.13](#whitespace--block-spacing) Require consistent spacing inside an open block token and the next token on the same line. This rule also enforces consistent spacing inside a close block token and previous token on the same line. eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
+  <a name="whitespace--block-spacing"></a><a name="19.14"></a>
+  - [19.14](#whitespace--block-spacing) Require consistent spacing inside an open block token and the next token on the same line. This rule also enforces consistent spacing inside a close block token and previous token on the same line. eslint: [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
 
     ```javascript
     // bad
@@ -3234,8 +3317,8 @@
     if (foo){ bar = 0; }
     ```
 
-  <a name="whitespace--comma-spacing"></a><a name="19.14"></a>
-  - [19.14](#whitespace--comma-spacing) Avoid spaces before commas and require a space after commas. eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
+  <a name="whitespace--comma-spacing"></a><a name="19.15"></a>
+  - [19.15](#whitespace--comma-spacing) Avoid spaces before commas and require a space after commas. eslint: [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
 
     ```javascript
     // bad
@@ -3247,8 +3330,8 @@
     let arr = [1, 2];
     ```
 
-  <a name="whitespace--computed-property-spacing"></a><a name="19.15"></a>
-  - [19.15](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+  <a name="whitespace--computed-property-spacing"></a><a name="19.16"></a>
+  - [19.16](#whitespace--computed-property-spacing) Enforce spacing inside of computed property brackets. eslint: [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
 
     ```javascript
     // bad
@@ -3264,8 +3347,8 @@
     obj[foo[bar]]
     ```
 
-  <a name="whitespace--func-call-spacing"></a><a name="19.16"></a>
-  - [19.16](#whitespace--func-call-spacing) Avoid spacing between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+  <a name="whitespace--func-call-spacing"></a><a name="19.17"></a>
+  - [19.17](#whitespace--func-call-spacing) Avoid spacing between functions and their invocations. eslint: [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
 
     ```javascript
     // bad
@@ -3278,8 +3361,8 @@
     func();
     ```
 
-  <a name="whitespace--key-spacing"></a><a name="19.17"></a>
-  - [19.17](#whitespace--key-spacing) Enforce spacing between keys and values in object literal properties. eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
+  <a name="whitespace--key-spacing"></a><a name="19.18"></a>
+  - [19.18](#whitespace--key-spacing) Enforce spacing between keys and values in object literal properties. eslint: [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
 
     ```javascript
     // bad
@@ -3290,11 +3373,11 @@
     let obj = { "foo": 42 };
     ```
 
-  <a name="whitespace--no-trailing-spaces"></a><a name="19.18"></a>
-  - [19.18](#whitespace--no-trailing-spaces) Avoid trailing spaces at the end of lines. eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
+  <a name="whitespace--no-trailing-spaces"></a><a name="19.19"></a>
+  - [19.19](#whitespace--no-trailing-spaces) Avoid trailing spaces at the end of lines. eslint: [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
 
-  <a name="whitespace--no-multiple-empty-lines"></a><a name="19.19"></a>
-  - [19.19](#whitespace--no-multiple-empty-lines) Avoid multiple empty lines and only allow one newline at the end of files. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+  <a name="whitespace--no-multiple-empty-lines"></a><a name="19.20"></a>
+  - [19.20](#whitespace--no-multiple-empty-lines) Avoid multiple empty lines and only allow one newline at the end of files. eslint: [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
 
     <!-- markdownlint-disable MD012 -->
     ```javascript
@@ -3312,7 +3395,7 @@
     ```
     <!-- markdownlint-enable MD012 -->
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Commas
 
@@ -3331,7 +3414,7 @@
     const x = [
         foo,
         bar,
-        baz,
+        baz
     ];
 
     // bad
@@ -3429,7 +3512,7 @@
     );
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Semicolons
 
@@ -3478,7 +3561,7 @@
 
     [Read more](https://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214#7365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Type Casting & Coercion
 
@@ -3486,7 +3569,9 @@
   - [22.1](#coercion--explicit) Perform type coercion at the beginning of the statement.
 
   <a name="coercion--strings"></a><a name="22.2"></a>
-  - [22.2](#coercion--strings) Strings: eslint: [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+  - [22.2](#coercion--strings) Strings: Prefer [`String()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) over [`.toString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString) eslint: [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+
+    > Why? `.toString()` is a prototype of `Number`. `String()` on the other hand, is globally available and thus allows casting of any type. Also, `.toString()` can be overridden as seen in [section 9.4](#constructors--tostring)
 
     ```javascript
     // => this.reviewScore = 9;
@@ -3505,7 +3590,9 @@
     ```
 
   <a name="coercion--numbers"></a><a name="22.3"></a>
-  - [22.3](#coercion--numbers) Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings. eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+  - [22.3](#coercion--numbers) Numbers: Use [`Number()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) for type casting and [`parseInt()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) only with a radix for parsing strings. Do prefer `Number()` over `parseInt()` though. eslint: [`radix`](https://eslint.org/docs/rules/radix) [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+
+    > Why? Mostly because of the same reasons listed in [the section above](#coercion--strings). Also, since `parseInt()` always expects a string, it does show odd behaviour when parsing very small numbers ([source](https://dmitripavlutin.com/parseint-mystery-javascript/))
 
     ```javascript
     const inputValue = "4";
@@ -3522,7 +3609,7 @@
     // bad
     const val = parseInt(inputValue);
 
-    // good
+    // best
     const val = Number(inputValue);
 
     // good
@@ -3567,7 +3654,20 @@
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+  <a name="coercion--valid-typeof"></a><a name="22.6"></a>
+  - [22.6](#coercion--valid-typeof) Only compare returned strings by `typeof` to valid strings: eslint: [`valid-typeof`](https://eslint.org/docs/rules/valid-typeof)
+
+    ```javascript
+    
+    // bad - will be prevented by linter
+    typeof foo === "strnig";
+    
+    // good
+    typeof foo === "string";
+    typeof bar === typeof foo;
+    ```
+
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Naming Conventions
 
@@ -3831,7 +3931,7 @@
     if (isActive) doSomething();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Accessors
 
@@ -3900,7 +4000,7 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Events
 
@@ -3933,7 +4033,7 @@
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Standard Library
 
@@ -3973,7 +4073,7 @@
     Number.isFinite(parseInt("2e3", 10)); // true
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## jQuery
 
@@ -4109,14 +4209,14 @@
     });
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## ECMAScript 5 Compatibility
 
   <a name="es5-compat--kangax"></a><a name="28.1"></a>
   - [28.1](#es5-compat--kangax) Refer to [Kangax](https://twitter.com/kangax/)’s ES5 [compatibility table](https://kangax.github.io/es5-compat-table/).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 <a name="ecmascript-6-styles"></a>
 ## ECMAScript 6+ (ES 2015+) Styles
@@ -4144,7 +4244,7 @@
 
     > Why? [They are not finalized](https://tc39.github.io/process-document/), and they are subject to change or to be withdrawn entirely. We want to use JavaScript, and proposals are not JavaScript yet.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Testing
 
@@ -4157,7 +4257,7 @@
     - 100% test coverage is a good goal to strive for, even if it’s not always practical to reach it.
     - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Performance
 
@@ -4172,7 +4272,7 @@
     - [Long String Concatenation](https://jsperf.com/ya-string-concat)
     - [Are JavaScript functions like `map()`, `reduce()`, and `filter()` optimized for traversing arrays?](https://www.quora.com/JavaScript-programming-language-Are-Javascript-functions-like-map-reduce-and-filter-already-optimized-for-traversing-array/answer/Quildreen-Motta)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Resources
 
@@ -4185,16 +4285,17 @@
     - [More on ES6 Features](https://github.com/lukehoban/es6features/)
     - [Useful JavaScript snippets that you can understand in 30 seconds](https://github.com/30-seconds/30-seconds-of-code)
     - [Common JS interview questions (test yourself here)](https://github.com/30-seconds/30-seconds-of-interviews)
+    - [Common JS Algorithms and Data Structures](https://github.com/trekhleb/javascript-algorithms)
 
   <a name="resources--read-this"></a><a name="32.2"></a>
   - [32.2](#resources--read-this) **Read This**
     - [Standard ECMA-262](http://www.ecma-international.org/ecma-262/6.0/index.html)
+    - [NodeJS Best practices](https://github.com/goldbergyoni/nodebestpractices)
 
   <a name="resources--tools"></a><a name="32.3"></a>
   - [32.3](#resources--tools) **Tools**
     - Code Style Linters
       - [ESlint](https://eslint.org/) - [NullDev Style .eslintrc](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/.eslintrc)
-      - [JSHint](http://jshint.com/) - [NullDev Style .jshintrc](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/.jshintrc)
 
   <a name="resources--further-reading"></a><a name="32.4"></a>
   - [32.4](#resources--further-reading) **Further Reading**
@@ -4240,7 +4341,7 @@
     - [JavaScript Air](https://javascriptair.com/)
     - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Copyright
 
@@ -4250,10 +4351,14 @@
   <a name="copyright--license"></a><a name="33.2"></a>
   - [33.2](#copyright--license) It uses the same [License](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/LICENSE). 
 
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
+
 ## Amendments
 
   <a name="amendments--forking"></a><a name="34.1"></a>
   - [34.1](#amendments--forking) We encourage you to fork this guide and change the rules to fit your team’s style guide. :smile_cat:
+
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 <br><br><br>
 
