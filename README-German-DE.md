@@ -36,7 +36,7 @@
 
      - [3.1](#objects--no-new) Literals
      - [3.2](#es6-computed-properties) Computed properties
-     - [3.3](#es6-object-shorthand) Objekt kurzform
+     - [3.3](#es6-object-shorthand) Objekt Kurzform
      - [3.4](#es6-object-concise) Object concise
      - [3.5](#objects--grouped-shorthand) Grouped shorthand
      - [3.6](#objects--quoted-props) Quoted properties
@@ -49,14 +49,14 @@
      <details>
      <summary>Inhalte anzeigen</summary>
 
-     - [4.1](#arrays--literals) Literals
+     - [4.1](#arrays--literals) Literale
      - [4.2](#arrays--push) Push
      - [4.3](#es6-array-spreads) Array spreads
-     - [4.4](#arrays--from-iterable) spread for iterable
-     - [4.5](#arrays--from-array-like) Array-like objects
+     - [4.4](#arrays--from-iterable) spread für iterable
+     - [4.5](#arrays--from-array-like) Array-ähnliche Objekte
      - [4.6](#arrays--mapping) Mapping
      - [4.7](#arrays--callback-return) Callback return
-     - [4.8](#arrays--bracket-newline) Linebreaks
+     - [4.8](#arrays--bracket-newline) Zeilenumbrüche
 
      </details>
 
@@ -87,21 +87,21 @@
      <summary>Inhalte anzeigen</summary>
 
      - [7.1](#functions--use-strict) Strict mode
-     - [7.2](#functions--declarations) Declarations
+     - [7.2](#functions--declarations) Deklarationen
      - [7.3](#functions--iife) IIFE's
-     - [7.4](#functions--in-blocks) Non-function blocks
-     - [7.5](#functions--note-on-blocks) Blocks (Info)
+     - [7.4](#functions--in-blocks) Nicht-Funktionsblöcke
+     - [7.5](#functions--note-on-blocks) Blöcke (Info)
      - [7.6](#functions--arguments-shadow) Arguments shadow
      - [7.7](#es6-rest) Rest
-     - [7.8](#es6-default-parameters) Default parameters
+     - [7.8](#es6-default-parameters) Standard-Parameter
      - [7.9](#functions--default-side-effects) Side effects
-     - [7.10](#functions--defaults-last) Defaults last
-     - [7.11](#functions--constructor) Function constructor
+     - [7.10](#functions--defaults-last) Standardwerte zuletzt
+     - [7.11](#functions--constructor) Funktionskonstruktor
      - [7.12](#functions--signature-spacing) Signature spacing
      - [7.13](#functions--mutate-params) Mutating parameters
-     - [7.14](#functions--reassign-params) Reassigning parameters
+     - [7.14](#functions--reassign-params) Neuzuweisung von Parametern
      - [7.15](#functions--spread-vs-apply) Spread
-     - [7.16](#functions--signature-invocation-indentation) Signature invocation indentation
+     - [7.16](#functions--signature-invocation-indentation) Signaturaufrufseinrückungen
 
      </details>
 
@@ -109,12 +109,12 @@
      <details>
      <summary>Inhalte anzeigen</summary>
 
-     - [8.1](#arrows--use-them) Usage
-     - [8.2](#arrows--implicit-return) Implicit return
+     - [8.1](#arrows--use-them) Verwendung
+     - [8.2](#arrows--implicit-return) Implizite Rückgaben
      - [8.3](#arrows--paren-wrap) Wrap
-     - [8.4](#arrows--one-arg-parens) Omitting parentheses
-     - [8.5](#arrows--confusing) Confusing functions
-     - [8.6](#whitespace--implicit-arrow-linebreak) Linebreaks
+     - [8.4](#arrows--one-arg-parens) Weglassen von Klammern
+     - [8.5](#arrows--confusing) Verwirrende Funktionen
+     - [8.6](#whitespace--implicit-arrow-linebreak) Zeilenumbrüche
 
      </details>
 
@@ -122,12 +122,12 @@
      <details>
      <summary>Inhalte anzeigen</summary>
 
-     - [9.1](#constructors--use-class) Use `class`
-     - [9.2](#constructors--extends) Inheritance
-     - [9.3](#constructors--chaining) Chaining
-     - [9.4](#constructors--tostring) toString methods
-     - [9.5](#constructors--no-useless) No empty constructors
-     - [9.6](#classes--no-duplicate-members) No duplicate members
+     - [9.1](#constructors--use-class) `class` verwenden
+     - [9.2](#constructors--extends) Vererbung
+     - [9.3](#constructors--chaining) Verkettung
+     - [9.4](#constructors--tostring) toString Methoden
+     - [9.5](#constructors--no-useless) Keine leeren Konstruktoren
+     - [9.6](#classes--no-duplicate-members) Keine redundanten member
 
      </details>
 
@@ -136,10 +136,10 @@
      <summary>Inhalte anzeigen</summary>
 
      - [10.1](#modules--use-them) CommonJS 
-     - [10.2](#modules--no-duplicate-imports) Duplicate imports
-     - [10.3](#modules--no-mutable-exports) Mutable exports
-     - [10.4](#modules--imports-first) Imports first
-     - [10.5](#modules--multiline-imports-over-newlines) Multiline imports
+     - [10.2](#modules--no-duplicate-imports) Redundante imports
+     - [10.3](#modules--no-mutable-exports) Veränderbare exports
+     - [10.4](#modules--imports-first) Imports zuerst
+     - [10.5](#modules--multiline-imports-over-newlines) Mehrzeilige imports
 
      </details>
 
@@ -157,9 +157,9 @@
      <details>
      <summary>Inhalte anzeigen</summary>
 
-     - [12.1](#properties--dot) Dot notation
-     - [12.2](#properties--bracket) Bracket notation
-     - [12.3](#es2016-properties--exponentiation-operator) Exponentiation operator
+     - [12.1](#properties--dot) Punkt Notation
+     - [12.2](#properties--bracket) Klammer Notation
+     - [12.3](#es2016-properties--exponentiation-operator) Exponenzial operator
 
      </details>
 
@@ -167,14 +167,14 @@
      <details>
      <summary>Inhalte anzeigen</summary>
 
-     - [13.1](#variables--const) Global namespace
-     - [13.2](#variables--one-const) Declaration per variable
-     - [13.3](#variables--const-let-group) Grouping
-     - [13.4](#variables--define-where-used) Placing
-     - [13.5](#variables--no-chain-assignment) Chain assignment
-     - [13.6](#variables--unary-increment-decrement) Increment & decrement
-     - [13.7](#variables--linebreak) Linebreaks
-     - [13.8](#variables--no-unused-vars) Unused variables
+     - [13.1](#variables--const) Globaler Namespace
+     - [13.2](#variables--one-const) Deklaration per Variabel
+     - [13.3](#variables--const-let-group) Gruppierung
+     - [13.4](#variables--define-where-used) Platzierung
+     - [13.5](#variables--no-chain-assignment) Ketten-Zuweisung
+     - [13.6](#variables--unary-increment-decrement) Inkrementierung & Dekrementierung
+     - [13.7](#variables--linebreak) Zeilenumbrüche
+     - [13.8](#variables--no-unused-vars) Nicht benutzte Variablen
      - [13.9](#variables--bitwise-floor) Bitwise floor
 
      </details>
@@ -296,16 +296,16 @@
      <details>
      <summary>Inhalte anzeigen</summary>
 
-     - [23.1](#naming--descriptive) Descriptive
+     - [23.1](#naming--descriptive) Beschreibend
      - [23.2](#naming--camelCase) camelCase
      - [23.3](#naming--PascalCase) PascalCase
-     - [23.4](#naming--leading-underscore) Underscores
+     - [23.4](#naming--leading-underscore) Unterstriche
      - [23.5](#naming--self-this) `this`
-     - [23.6](#naming--filename-matches-export) Filename
-     - [23.7](#naming--camelCase-default-export) Defaut export
+     - [23.6](#naming--filename-matches-export) Dateinamen
+     - [23.7](#naming--camelCase-default-export) Standard export
      - [23.8](#naming--PascalCase-singleton) Singleton
-     - [23.9](#naming--Acronyms-and-Initialisms) Acronyms and initialisms
-     - [23.10](#naming--uppercase) Uppercase
+     - [23.9](#naming--Acronyms-and-Initialisms) Akronyme und Inizialisierungen
+     - [23.10](#naming--uppercase) Großbuchstaben
 
      </details>
 
@@ -435,7 +435,7 @@
     console.log(foo, bar); // => 1, 9
     ```
 
-    - Symbols können oft nicht richtig polyfilled werden, deshalb sollte man sie vermeiden, wenn man für Browser/Umgebungen entwickelt, die siese nicht nativ unterstützen.
+    - Symbols können oft nicht richtig polyfilled werden. Deshalb sollte man sie vermeiden, wenn man für Browserumgebungen entwickelt, die diese nicht nativ unterstützen.
 
   <a name="types--complex"></a><a name="1.2"></a>
   - [1.2](#types--complex) **Komplexe Typen**: Bei komplexen Datentypen wird immer auf eine Referenz zugegriffen.
@@ -458,7 +458,7 @@
 ## Referenzen
 
   <a name="references--prefer-const"></a><a name="2.1"></a>
-  - [2.1](#references--prefer-const) Benutze `const` für alle Referenzen; Vermeide die Verwendung von `var`. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) `const` für alle Referenzen benutzen; Die Verwendung von `var` vermeiden. eslint: [`prefer-const`](https://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign.html)
 
     > Wieso? Es stellt sicher, dass man Referenzen nicht neu zuweisen kann. Das kann sonst zu Fehlern und schwer verständlichem Code führen.
 
@@ -492,7 +492,7 @@
     ```
 
   <a name="references--let-require"></a><a name="2.3"></a>
-  - [2.3](#references--let-require) Benutze `let` für `require()` imports in NodeJS.
+  - [2.3](#references--let-require) `let` für `require()` imports in NodeJS benutzen.
 
     > Wieso? Mit `const` kann man die Import-Variable später nicht neu definieren falls nötig. Außerdemn kann die Variable nicht verwendet werden, ohne sie explizit zu inizialisieren. 
 
@@ -507,7 +507,7 @@
     ```
     
   <a name="references--block-scope"></a><a name="2.3"></a>
-  - [2.4](#references--block-scope) Beachte, dass beide `let` und `const` block-scoped sind.
+  - [2.4](#references--block-scope) Beachten, dass `let` und `const` block-scoped sind.
 
     ```javascript
     // const und let existieren nur in dem Block, in dem sie definiert wurden.
@@ -526,7 +526,7 @@
 ## Objekte
 
   <a name="objects--no-new"></a><a name="3.1"></a>
-  - [3.1](#objects--no-new) Benutze den "literal syntax" für die Erstellung von Objekten. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) "literal syntax" für die Erstellung von Objekten benutzen. eslint: [`no-new-object`](https://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
     // schlecht
@@ -537,7 +537,7 @@
     ```
 
   <a name="es6-computed-properties"></a><a name="3.4"></a>
-  - [3.2](#es6-computed-properties) Verwende automatisch berechnete Eigenschaftsnamen, wenn Objekte mit dynamischen Eigenschaftennamen erstellt werden.
+  - [3.2](#es6-computed-properties) Automatisch berechnete Eigenschaftsnamen verwenden, wenn Objekte mit dynamischen Eigenschaftennamen erstellt werden.
 
     > Wieso? Sie erlauben es, alle Eigenschaften eines Objekts an einer Stelle zu definieren.
 
@@ -563,7 +563,7 @@
     ```
 
   <a name="es6-object-shorthand"></a><a name="3.5"></a>
-  - [3.3](#es6-object-shorthand) Benutze Objekt Methoden shorthands. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
+  - [3.3](#es6-object-shorthand) Objekt-Methoden-Shorthands verwenden. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     ```javascript
     // schlecht
@@ -586,7 +586,7 @@
     ```
 
   <a name="es6-object-concise"></a><a name="3.6"></a>
-  - [3.4](#es6-object-concise) Benutze Eigenschaftsnamen shorthands. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
+  - [3.4](#es6-object-concise) Eigenschaftsnamen-Shorthands benutzen. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     > Wieso? Es ist kürzer und funktionsbeschreibend.
 
@@ -605,9 +605,9 @@
     ```
 
   <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
-  - [3.5](#objects--grouped-shorthand) Gruppiere shorthand Eigenschaften am Anfang der Objekt Deklaration.
+  - [3.5](#objects--grouped-shorthand) Shorthand Eigenschaften am Anfang der Objekt Deklaration gruppieren.
 
-    > Wieso? Man kann einfacher und schneller erkennen, welche Eigenschaften den shorthand verwenden.
+    > Wieso? Man kann einfacher und schneller erkennen, welche Eigenschaften den Shorthand verwenden.
 
     ```javascript
     const foo = "bar";
@@ -634,7 +634,65 @@
     };
     ```
 
-...
+<a name="objects--quoted-props"></a><a name="3.8"></a>
+  - [3.6](#objects--quoted-props) Nur Properties unter Anführungszeichen setzen, die invalide identifier darstellen würden. eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
+
+    > Warum? Im Allgemeinen ist es subjektiv einfacher zu lesen. Es verbessert die Syntaxhervorhebung und wird auch von vielen JS-Engines leichter optimiert.
+
+    ```javascript
+    // schlecht
+    const bad = {
+        "foo": 3,
+        "bar": 4,
+        "data-foo": 5
+    };
+
+    // gut
+    const good = {
+        foo: 3,
+        bar: 4,
+        "data-foo": 5
+    };
+    ```
+
+  <a name="objects--prototype-builtins"></a>
+  - [3.7](#objects--prototype-builtins) `Object.prototype` Methoden wie `hasOwnProperty`, `propertyIsEnumerable`, und `isPrototypeOf` niemals direkt aufrufen. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
+
+    > Warum? Diese Methoden könnten durch Eigenschaften des Ursprungsobjektes "shadowed" werden - z.B. `{ hasOwnProperty: false }` - oder, das Objekt könnte ein null-Objekt sein (`Object.create(null)`).
+
+    ```javascript
+    // schlecht
+    object.hasOwnProperty(key);
+
+    // gut
+    Object.prototype.hasOwnProperty.call(object, key);
+
+    // am besten - Stage 3 Proposal:
+    // https://github.com/tc39/proposal-accessible-object-hasownproperty
+    Object.hasOwn(object, key);
+    ```
+
+  <a name="objects--rest-spread"></a>
+  - [3.8](#objects--rest-spread) Den Objekt "spread" Operator an Stelle von [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) bevorzugen, um shallow-copy's von Objekten zu machen. Den Objekt "rest" Operator verwenden, um ein neues Objekt zu erzeugen, bei dem gewissen Eigenschaften weggelassen werden.
+
+    ```javascript
+    // sehr schlecht
+    const original = { a: 1, b: 2 };
+    const copy = Object.assign(original, { c: 3 }); // dies modifiziert `original`
+    delete copy.a; // das auch
+
+    // schlecht
+    const original = { a: 1, b: 2 };
+    const copy = Object.assign({}, original, { c: 3 }); // copy => { a: 1, b: 2, c: 3 }
+
+    // gut
+    const original = { a: 1, b: 2 };
+    const copy = { ...original, c: 3 }; // copy => { a: 1, b: 2, c: 3 }
+
+    const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
+    ```
+
+**[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
 ## Copyright
 
