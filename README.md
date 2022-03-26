@@ -51,8 +51,7 @@ $ `npm i` - and you're ready to go!
 
        - [2.1](#references--prefer-const) Prefer `const`
        - [2.2](#references--disallow-var) Disallow `var`
-       - [2.3](#references--let-require) `let` for `require()`
-       - [2.4](#references--block-scope) Block scope
+       - [2.3](#references--block-scope) Block scope
 
      </details>
 
@@ -257,13 +256,13 @@ $ `npm i` - and you're ready to go!
      <details>
      <summary>View contents</summary>
 
-     - [18.0](#comments--language) Language
-     - [18.1](#comments--multiline) Multi-line
-     - [18.2](#comments--singleline) Single-line
-     - [18.3](#comments--spaces) Spaces
-     - [18.4](#comments--actionitems) Prefixing / Action-items
-     - [18.5](#comments--fixme) FixMe
-     - [18.6](#comments--todo) ToDo
+     - [18.1](#comments--language) Language
+     - [18.2](#comments--multiline) Multi-line
+     - [18.3](#comments--singleline) Single-line
+     - [18.4](#comments--spaces) Spaces
+     - [18.5](#comments--actionitems) Prefixing / Action-items
+     - [18.6](#comments--fixme) FixMe
+     - [18.7](#comments--todo) ToDo
 
      </details>
 
@@ -526,24 +525,9 @@ $ `npm i` - and you're ready to go!
         count += 1;
     }
     ```
-
-  <a name="references--let-require"></a><a name="2.3"></a>
-  - [2.3](#references--let-require) Use `let` for `require()` imports in NodeJS.
-
-    > Why? Modules are rather dynamic in nature. If you want to add functionality dynamically later on, it's easier if the module isn't imported as `const`. Also, in some cases `let` is faster than `const` when used on `require()` ([Source](https://stackoverflow.com/a/42767905/7575111)).
-
-    ```javascript
-    // bad
-    var x = require("x");
-    const y = require("y");
-    
-    // good
-    let x = require("x");
-    let y = require("y");
-    ```
     
   <a name="references--block-scope"></a><a name="2.3"></a>
-  - [2.4](#references--block-scope) Note that both `let` and `const` are block-scoped.
+  - [2.3](#references--block-scope) Note that both `let` and `const` are block-scoped.
 
     ```javascript
     // const and let only exist in the blocks they are defined in.
@@ -572,7 +556,7 @@ $ `npm i` - and you're ready to go!
     const item = {};
     ```
 
-  <a name="es6-computed-properties"></a><a name="3.4"></a>
+  <a name="es6-computed-properties"></a><a name="3.2"></a>
   - [3.2](#es6-computed-properties) Use computed property names when creating objects with dynamic property names.
 
     > Why? They allow you to define all the properties of an object in one place.
@@ -598,7 +582,7 @@ $ `npm i` - and you're ready to go!
     };
     ```
 
-  <a name="es6-object-shorthand"></a><a name="3.5"></a>
+  <a name="es6-object-shorthand"></a><a name="3.3"></a>
   - [3.3](#es6-object-shorthand) Use object method shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     ```javascript
@@ -621,7 +605,7 @@ $ `npm i` - and you're ready to go!
     };
     ```
 
-  <a name="es6-object-concise"></a><a name="3.6"></a>
+  <a name="es6-object-concise"></a><a name="3.4"></a>
   - [3.4](#es6-object-concise) Use property value shorthand. eslint: [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand.html)
 
     > Why? It is shorter and descriptive.
@@ -640,7 +624,7 @@ $ `npm i` - and you're ready to go!
     };
     ```
 
-  <a name="objects--grouped-shorthand"></a><a name="3.7"></a>
+  <a name="objects--grouped-shorthand"></a><a name="3.5"></a>
   - [3.5](#objects--grouped-shorthand) Group your shorthand properties at the beginning of your object declaration.
 
     > Why? It’s easier to tell which properties are using the shorthand.
@@ -670,7 +654,7 @@ $ `npm i` - and you're ready to go!
     };
     ```
 
-  <a name="objects--quoted-props"></a><a name="3.8"></a>
+  <a name="objects--quoted-props"></a><a name="3.6"></a>
   - [3.6](#objects--quoted-props) Only quote properties that are invalid identifiers. eslint: [`quote-props`](https://eslint.org/docs/rules/quote-props.html)
 
     > Why? In general it is subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
@@ -691,7 +675,7 @@ $ `npm i` - and you're ready to go!
     };
     ```
 
-  <a name="objects--prototype-builtins"></a>
+  <a name="objects--prototype-builtins"></a><a name="3.7"></a>
   - [3.7](#objects--prototype-builtins) Do not call `Object.prototype` methods directly, such as `hasOwnProperty`, `propertyIsEnumerable`, and `isPrototypeOf`. eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
 
     > Why? These methods may be shadowed by properties on the object in question - consider `{ hasOwnProperty: false }` - or, the object may be a null object (`Object.create(null)`).
@@ -708,7 +692,7 @@ $ `npm i` - and you're ready to go!
     Object.hasOwn(object, key);
     ```
 
-  <a name="objects--rest-spread"></a>
+  <a name="objects--rest-spread"></a><a name="3.8"></a>
   - [3.8](#objects--rest-spread) Prefer the object spread operator over [`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) to shallow-copy objects. Use the object rest operator to get a new object with certain properties omitted.
 
     ```javascript
@@ -787,7 +771,7 @@ $ `npm i` - and you're ready to go!
     const nodes = [...foo];
     ```
 
-  <a name="arrays--from-array-like"></a>
+  <a name="arrays--from-array-like"></a><a name="4.5"></a>
   - [4.5](#arrays--from-array-like) Use [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) for converting an array-like object to an array.
 
     ```javascript
@@ -800,7 +784,7 @@ $ `npm i` - and you're ready to go!
     const arr = Array.from(arrLike);
     ```
 
-  <a name="arrays--mapping"></a>
+  <a name="arrays--mapping"></a><a name="4.6"></a>
   - [4.6](#arrays--mapping) Use [`Array.from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) instead of spread `...` for mapping over iterables, because it avoids creating an intermediate array.
 
     ```javascript
@@ -811,7 +795,7 @@ $ `npm i` - and you're ready to go!
     const baz = Array.from(foo, bar);
     ```
 
-  <a name="arrays--callback-return"></a><a name="4.5"></a>
+  <a name="arrays--callback-return"></a><a name="4.7"></a>
   - [4.7](#arrays--callback-return) Use return statements in array method callbacks. It’s ok to omit the return if the function body consists of a single statement returning an expression without side effects, following [8.2](#arrows--implicit-return). eslint: [`array-callback-return`](https://eslint.org/docs/rules/array-callback-return)
 
     ```javascript
@@ -850,7 +834,7 @@ $ `npm i` - and you're ready to go!
     });
     ```
 
-  <a name="arrays--bracket-newline"></a>
+  <a name="arrays--bracket-newline"></a><a name="4.8"></a>
   - [4.8](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
 
     ```javascript
@@ -1050,7 +1034,7 @@ $ `npm i` - and you're ready to go!
     const foo = `my name is "${name}"`;
     ```
 
-  <a name="strings--regex"></a></a><a name="6.6"></a>
+  <a name="strings--regex"></a><a name="6.6"></a>
   - [6.6](#strings--regex) Do not split regular expressions, even if some parts are used multiple times. The only exception are computed RegEx'es.
   
     > Why? It has a great impact on readability and can lead to extremely confusing code
@@ -1549,7 +1533,7 @@ $ `npm i` - and you're ready to go!
     };
     ```
 
-  <a name="whitespace--implicit-arrow-linebreak"></a>
+  <a name="whitespace--implicit-arrow-linebreak"></a><a name="8.6"></a>
   - [8.6](#whitespace--implicit-arrow-linebreak) Enforce the location of arrow function bodies with implicit returns. eslint: [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
 
     ```javascript
@@ -1846,7 +1830,7 @@ $ `npm i` - and you're ready to go!
     foo.init();
     ```
     
-  <a name="modules--import-extensions"></a>
+  <a name="modules--import-extensions"></a><a name="10.5"></a>
   - [10.5](#modules--import-extensions) Do not include JavaScript filename extensions
  eslint: [`import/extensions`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md)
     > Why? Including extensions inhibits refactoring, and inappropriately hardcodes implementation details of the module you're importing in every consumer.
@@ -2535,7 +2519,7 @@ $ `npm i` - and you're ready to go!
     const baz = !c;
     ```
 
-  <a name="comparison--no-mixed-operators"></a>
+  <a name="comparison--no-mixed-operators"></a><a name="15.8"></a>
   - [15.8](#comparison--no-mixed-operators) When mixing operators, enclose them in parentheses. The only exception is the standard arithmetic operators (`+`, `-`, `*`, & `/`) since their precedence is broadly understood. eslint: [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators.html)
 
     > Why? This improves readability and clarifies the developer’s intention.
@@ -2764,8 +2748,8 @@ $ `npm i` - and you're ready to go!
 
 ## Comments
 
-  <a name="comments--language"></a><a name="18.0"></a>
-  - [18.0](#comments--language) Stick to the english language. Always write variable names, function names, comments and co in english.
+  <a name="comments--language"></a><a name="18.1"></a>
+  - [18.1](#comments--language) Stick to the english language. Always write variable names, function names, comments and co in english.
 
     > Why? Some reasons:
     > - Consistency.
@@ -2773,8 +2757,8 @@ $ `npm i` - and you're ready to go!
     > - JavaScript's keywords are english.
     > - Some languages use symbols from different charsets (ö, ä, ü, ß, Ѱ, Ω, etc. pp.). Some of them are illegal as variable/function names and others could break your encoding.
 
-  <a name="comments--multiline"></a><a name="18.1"></a>
-  - [18.1](#comments--multiline) Use `/** ... */` for multi-line comments.
+  <a name="comments--multiline"></a><a name="18.2"></a>
+  - [18.2](#comments--multiline) Use `/** ... */` for multi-line comments.
 
     ```javascript
     // bad
@@ -2803,8 +2787,8 @@ $ `npm i` - and you're ready to go!
     }
     ```
 
-  <a name="comments--singleline"></a><a name="18.2"></a>
-  - [18.2](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it’s on the first line of a block.
+  <a name="comments--singleline"></a><a name="18.3"></a>
+  - [18.3](#comments--singleline) Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it’s on the first line of a block.
 
     ```javascript
     // bad
@@ -2842,8 +2826,8 @@ $ `npm i` - and you're ready to go!
     }
     ```
 
-  <a name="comments--spaces"></a><a name="18.3"></a>
-  - [18.3](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
+  <a name="comments--spaces"></a><a name="18.4"></a>
+  - [18.4](#comments--spaces) Start all comments with a space to make it easier to read. eslint: [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
 
     ```javascript
     // bad
@@ -2879,11 +2863,11 @@ $ `npm i` - and you're ready to go!
     }
     ```
 
-  <a name="comments--actionitems"></a><a name="18.4"></a>
-  - [18.4](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` (action-items) helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
+  <a name="comments--actionitems"></a><a name="18.5"></a>
+  - [18.5](#comments--actionitems) Prefixing your comments with `FIXME` or `TODO` (action-items) helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME: -- need to figure this out` or `TODO: -- need to implement`.
 
-  <a name="comments--fixme"></a><a name="18.5"></a>
-  - [18.5](#comments--fixme) Use `// FIXME:` to annotate problems.
+  <a name="comments--fixme"></a><a name="18.6"></a>
+  - [18.6](#comments--fixme) Use `// FIXME:` to annotate problems.
 
     ```javascript
     class Calculator extends Abacus {
@@ -2896,8 +2880,8 @@ $ `npm i` - and you're ready to go!
     }
     ```
 
-  <a name="comments--todo"></a><a name="18.6"></a>
-  - [18.6](#comments--todo) Use `// TODO:` to annotate solutions to problems.
+  <a name="comments--todo"></a><a name="18.7"></a>
+  - [18.7](#comments--todo) Use `// TODO:` to annotate solutions to problems.
 
     ```javascript
     class Calculator extends Abacus {
