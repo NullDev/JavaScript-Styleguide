@@ -1357,7 +1357,7 @@ $ `npm i` - and you're ready to go!
     ```
 
   <a name="functions--signature-invocation-indentation"></a><a name="7.16"></a>
-  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself and without a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
+  - [7.16](#functions--signature-invocation-indentation) Functions with multiline signatures, or invocations, should be indented just like every other multiline list in this guide: with each item on a line by itself and with a trailing comma on the last item. eslint: [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
 
     ```javascript
     // bad
@@ -1371,7 +1371,7 @@ $ `npm i` - and you're ready to go!
     function foo(
         bar,
         baz,
-        quux
+        quux,
         ...
     ){
       // ...
@@ -1386,7 +1386,7 @@ $ `npm i` - and you're ready to go!
     console.log(
         foo,
         bar,
-        baz
+        baz,
         ...
     );
     ```
@@ -3398,7 +3398,7 @@ $ `npm i` - and you're ready to go!
     const x = [
         foo,
         bar,
-        baz
+        baz,
     ];
 
     // bad
@@ -3414,45 +3414,34 @@ $ `npm i` - and you're ready to go!
         foo: "foo1",
         bar: "bar1",
         baz: "baz1",
-        abc: "abc1"
+        abc: "abc1",
     };
     ```
 
   <a name="commas--dangling"></a><a name="20.2"></a>
-  - [20.2](#commas--dangling) Do not write additional trailing commas. eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
+  - [20.2](#commas--dangling) Write additional trailing commas. eslint: [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle.html)
 
-    > Why? This may lead to cleaner git diffs but also can cause problems and bugs (especially in older browsers). For example, a comma must not appear after a [rest element](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters). It is also more logical to expect _something_ after a comma.   [Read more...](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas)
+    > Why? It leads to cleaner git diffs and allows easier copy-pasting. **Careful**: A comma must not appear after a [rest element](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters). [Read more...](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas)
 
     ```diff
-    // git diff with trailing comma (bad anyway)
-    const foo = {
-         bar: "bar",
-         baz: "baz",
-    +    abc: [1, 2, 3],
-    };
-    
-    // git diff without trailing comma (still good)
+    // git diff without trailing comma (bad)
     const hero = {
          bar: "bar",
     -    baz: "baz"
     +    baz: "baz",
     +    abc: [1, 2, 3]
     };
+    
+    // git diff with trailing comma (good)
+    const foo = {
+         bar: "bar",
+         baz: "baz",
+    +    abc: [1, 2, 3],
+    };
     ```
 
     ```javascript
     // bad
-    const foo = {
-        bar: true,
-        baz: false,
-    };
-
-    const foo = [
-        "bar",
-        "baz",
-    ];
-
-    // good
     const foo = {
         bar: true,
         baz: false
@@ -3463,16 +3452,18 @@ $ `npm i` - and you're ready to go!
         "baz"
     ];
 
-    // bad
-    function foo(
-        arg1,
-        arg2,
-        agr3,
-    ){
-        // ..
-    }
-
     // good
+    const foo = {
+        bar: true,
+        baz: false,
+    };
+
+    const foo = [
+        "bar",
+        "baz",
+    ];
+
+    // bad
     function foo(
         arg1,
         arg2,
@@ -3481,18 +3472,27 @@ $ `npm i` - and you're ready to go!
         // ..
     }
 
+    // good
+    function foo(
+        arg1,
+        arg2,
+        agr3,
+    ){
+        // ..
+    }
+
     // bad
     createUser(
         firstName,
         lastName,
-        birthday,
+        birthday
     );
 
     // good
     createUser(
         firstName,
         lastName,
-        birthday
+        birthday,
     );
     ```
 
