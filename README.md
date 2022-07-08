@@ -570,7 +570,7 @@ $ `npm i` - and you're ready to go!
     // bad
     const obj = {
         id: 5,
-        name: "foo"
+        name: "foo",
     };
     obj[getKey("enabled")] = true;
 
@@ -578,7 +578,7 @@ $ `npm i` - and you're ready to go!
     const obj = {
         id: 5,
         name: "foo",
-        [getKey("enabled")]: true
+        [getKey("enabled")]: true,
     };
     ```
 
@@ -615,12 +615,12 @@ $ `npm i` - and you're ready to go!
 
     // bad
     const obj = {
-        foo: foo
+        foo: foo,
     };
 
     // good
     const obj = {
-        foo
+        foo,
     };
     ```
 
@@ -640,7 +640,7 @@ $ `npm i` - and you're ready to go!
         foo,
         abc: 3,
         xyz: 4,
-        bar
+        bar,
     };
 
     // good
@@ -650,7 +650,7 @@ $ `npm i` - and you're ready to go!
         test: 1,
         key: 2,
         abc: 3,
-        xyz: 4
+        xyz: 4,
     };
     ```
 
@@ -664,14 +664,14 @@ $ `npm i` - and you're ready to go!
     const bad = {
         "foo": 3,
         "bar": 4,
-        "data-foo": 5
+        "data-foo": 5,
     };
 
     // good
     const good = {
         foo: 3,
         bar: 4,
-        "data-foo": 5
+        "data-foo": 5,
     };
     ```
 
@@ -1792,7 +1792,7 @@ $ `npm i` - and you're ready to go!
     let {
         foo,
         foo1,
-        foo2
+        foo2,
     } = require("bar");
     ```
 
@@ -1862,7 +1862,7 @@ $ `npm i` - and you're ready to go!
         longNameB,
         longNameC,
         longNameD,
-        longNameE
+        longNameE,
     } = require("path");
     ```
 
@@ -2985,12 +2985,12 @@ $ `npm i` - and you're ready to go!
     
     // bad
     let x ={
-        foo: "bar"
+        foo: "bar",
     };
     
     // good
     let x = {
-        foo: "bar"
+        foo: "bar",
     };
     ```
 
@@ -3891,12 +3891,12 @@ $ `npm i` - and you're ready to go!
 
     // bad - unnecessarily uppercases key while adding no semantic value
     export const MAPPING = {
-        KEY: "value"
+        KEY: "value",
     };
 
     // good
     export const MAPPING = {
-        key: "value"
+        key: "value",
     };
     ```
   <a name="naming--state-booleans"></a><a name="23.11"></a>
