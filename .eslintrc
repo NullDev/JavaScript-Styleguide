@@ -10,7 +10,7 @@
     "parser": "@babel/eslint-parser",       // npm install @babel/eslint-parser @babel/core eslint --save-dev
     "parserOptions": {
         "ecmaVersion": 12,                  // set highest possible version
-        "sourceType": "module",             // don't treat scripts as modules (keeps enforcing "use strict")
+        "sourceType": "script",             // don't treat scripts as modules (keeps enforcing "use strict")
         "requireConfigFile": false,         // make babel not look for config
         "babelOptions": {
             "plugins": [                    // additional plugins for new ES-proposals such as "@babel/plugin-proposal-class-properties"
