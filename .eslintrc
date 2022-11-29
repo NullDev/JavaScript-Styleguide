@@ -4,7 +4,7 @@
         "browser": true,                    // browser global variables
         "node": true,                       // Node.js global variables and Node.js-specific rules
         "commonjs": true,                   // CommonJS global variables and CommonJS scoping
-        "es2021": true,                     // ESNext support
+        "es2022": true,                     // ESNext support
         "es6": true                         // enable all ECMAScript 6 features except for modules
     },
     "parser": "@babel/eslint-parser",       // npm install @babel/eslint-parser @babel/core eslint --save-dev
