@@ -19,16 +19,16 @@
 - Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
     $ `npm install @babel/eslint-parser @babel/core eslint --save-dev`
 - Get the config: <br>
-    $ `wget https://raw.githubusercontent.com/NullDevCo/JavaScript-Styleguide/master/.eslintrc`
+    $ `wget https://raw.githubusercontent.com/NullDev/JavaScript-Styleguide/master/.eslintrc`
 - Done! :) 
 
 <sub>*) The rationale for using Babel-ESLint is that it supports the newest Stage-3 ECMAScript features.</sub>
 
-### Or use the [NullDev Project Template](https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template) ...
+### Or use the [NullDev Project Template](https://github.com/NullDev/JavaScript-Styleguide/tree/master/nulldev-template) ...
 
 ... with already preset config files and project structure
 
-[DOWNLOAD](https://downgit.github.io/#/home?url=https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template)
+[DOWNLOAD](https://downgit.github.io/#/home?url=https://github.com/NullDev/JavaScript-Styleguide/tree/master/nulldev-template)
 
 $ `npm i` - and you're ready to go!
 
@@ -4279,7 +4279,7 @@ $ `npm i` - and you're ready to go!
   <a name="resources--tools"></a><a name="32.3"></a>
   - [32.3](#resources--tools) **Tools**
     - Code Style Linters
-      - [ESlint](https://eslint.org/) - [NullDev Style .eslintrc](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/.eslintrc)
+      - [ESlint](https://eslint.org/) - [NullDev Style .eslintrc](https://github.com/NullDev/JavaScript-Styleguide/blob/master/.eslintrc)
 
   <a name="resources--further-reading"></a><a name="32.4"></a>
   - [32.4](#resources--further-reading) **Further Reading**
@@ -4333,7 +4333,7 @@ $ `npm i` - and you're ready to go!
   - [33.1](#copyright--base) This Styleguide is based on [AirBnB's JavaScript Styleguide](https://github.com/airbnb/javascript) 
   
   <a name="copyright--license"></a><a name="33.2"></a>
-  - [33.2](#copyright--license) It uses the same [License](https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/LICENSE). 
+  - [33.2](#copyright--license) It uses the same [License](https://github.com/NullDev/JavaScript-Styleguide/blob/master/LICENSE). 
 
 **[⬆ back to top](#table-of-contents-bookmark_tabs)**
 
@@ -4347,7 +4347,7 @@ $ `npm i` - and you're ready to go!
 <br><br><br>
 
 <p align="center">
-<a href="https://github.com/NullDevCo/JavaScript-Styleguide/blob/master/LICENSE">
+<a href="https://github.com/NullDev/JavaScript-Styleguide/blob/master/LICENSE">
 <img src="https://img.shields.io/badge/License-MIT-F8E301.svg?style=flat-square"/>
 </a>
 </p>
