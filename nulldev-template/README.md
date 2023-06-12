@@ -8,4 +8,4 @@
 
 ---
 
-<sub>Based on the [NullDev project template](https://github.com/NullDevCo/JavaScript-Styleguide/tree/master/nulldev-template) and [NullDev Styleguide](https://github.com/NullDevCo/JavaScript-Styleguide)</sub>
+<sub>Based on the [NullDev project template](https://github.com/NullDev/JavaScript-Styleguide/tree/master/nulldev-template) and [NullDev Styleguide](https://github.com/NullDev/JavaScript-Styleguide)</sub>
