@@ -1,11 +1,11 @@
-{                                           // NullDev-Style ESLint Config: https://github.com/NullDevCo/JavaScript-Styleguide
+{                                           // NullDev-Style ESLint Config: https://github.com/NullDev/JavaScript-Styleguide
     "plugins": [],                          // Additional ESLint Plugins
     "env": {                                // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
         "browser": true,                    // browser global variables
         "node": true,                       // Node.js global variables and Node.js-specific rules
         "commonjs": true,                   // CommonJS global variables and CommonJS scoping
         "es2022": true,                     // ESNext support
-        "es6": true                         // enable all ECMAScript 6 features except for modules
+        "es6": true                         // enable all ECMAScript 6 features
     },
     "parser": "@babel/eslint-parser",       // npm install @babel/eslint-parser @babel/core eslint --save-dev
     "parserOptions": {
