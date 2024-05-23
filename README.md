@@ -2,11 +2,11 @@
 
 # NullDev JavaScript StyleGuide
 
+✨ _**Now with the new ESLint Flat Config Format!**_ ✨
+
 <p align="center"><img height="150" width="auto" src="https://i.imgur.com/eCmJFjH.png" /></p>
 <p align="center"><b>A <i>mostly</i> reasonable approach to JavaScript</b></p>
 <p align="center"><sub>Or... Mainly NodeJS...</sub></p>
-
-## Now with the new ESLint Flat Config!
 
 </p>
 
