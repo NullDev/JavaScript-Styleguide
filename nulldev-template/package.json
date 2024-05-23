@@ -14,11 +14,9 @@
   "author": "NullDev",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/eslint-parser": "^7.14.3",
-    "@types/node": "^15.6.1",
-    "eslint": "^7.27.0",
-    "jsdoc-strip-async-await": "^0.1.0"
+    "@babel/core": "^7.24.5",
+    "@babel/eslint-parser": "^7.24.5",
+    "eslint": "^9.3.0"
   },
   "engines": {
     "node": ">=15.0.0"

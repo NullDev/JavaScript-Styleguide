@@ -6,6 +6,8 @@
 <p align="center"><b>A <i>mostly</i> reasonable approach to JavaScript</b></p>
 <p align="center"><sub>Or... Mainly NodeJS...</sub></p>
 
+## Now with the new ESLint Flat Config!
+
 </p>
 
 ---
@@ -19,7 +21,7 @@
 - Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
     $ `npm install @babel/eslint-parser @babel/core eslint --save-dev`
 - Get the config: <br>
-    $ `wget https://raw.githubusercontent.com/NullDev/JavaScript-Styleguide/master/.eslintrc`
+    $ `wget https://raw.githubusercontent.com/NullDev/JavaScript-Styleguide/master/eslint.config.js`
 - Done! :) 
 
 <sub>*) The rationale for using Babel-ESLint is that it supports the newest Stage-3 ECMAScript features.</sub>
