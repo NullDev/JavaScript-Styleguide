@@ -147,8 +147,8 @@ export default [{                           // NullDev-Style ESLint Config: http
                 allowSingleLine: true,
             },
         ],
-        quotes: [
-            2, "double", "avoid-escape",    // http://eslint.org/docs/rules/quotes
+        quotes: [                           // http://eslint.org/docs/rules/quotes
+            2, "double", "avoid-escape",
         ],
         camelcase: [2, {                    // http://eslint.org/docs/rules/camelcase
             properties: "never",
@@ -174,8 +174,8 @@ export default [{                           // NullDev-Style ESLint Config: http
         "no-new-object": 2,                 // http://eslint.org/docs/rules/no-new-object
         "no-spaced-func": 2,                // http://eslint.org/docs/rules/no-spaced-func
         "no-trailing-spaces": 2,            // http://eslint.org/docs/rules/no-trailing-spaces
-        "no-extra-parens": [2,
-            "functions",                    // http://eslint.org/docs/rules/no-extra-parens
+        "no-extra-parens": [2,              // http://eslint.org/docs/rules/no-extra-parens
+            "functions",
         ],
         "no-underscore-dangle": 0,          // http://eslint.org/docs/rules/no-underscore-dangle
         "one-var": [2, "never"],            // http://eslint.org/docs/rules/one-var
@@ -195,8 +195,8 @@ export default [{                           // NullDev-Style ESLint Config: http
             before: false,
             after: true,
         }],
-        "space-before-function-paren": [2,
-            "never",                        // http://eslint.org/docs/rules/space-before-function-paren
+        "space-before-function-paren": [2,  // http://eslint.org/docs/rules/space-before-function-paren
+            "never",
         ],
         "space-infix-ops": 2,               // http://eslint.org/docs/rules/space-infix-ops
         "space-return-throw-case": 0,       // http://eslint.org/docs/rules/space-return-throw-case
