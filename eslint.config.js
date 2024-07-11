@@ -11,7 +11,9 @@ export default [{                           // NullDev-Style ESLint Config: http
         sourceType: "module",               // prefer ES Modules (doesn't require "use strict")
         parserOptions: {
             requireConfigFile: false,       // make babel not look for config
-            babelOptions: {
+            babelOptions: {                 
+                presets: [                  // If used with React, add "@babel/preset-react" here and do `npm i -D @babel/preset-react`
+                ],                
                 plugins: [                  // additional plugins for new ES-proposals such as "@babel/plugin-proposal-class-properties"
                 ],
             },
