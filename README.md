@@ -19,7 +19,9 @@
 - Make sure ESLint is installed. For VSCode, [download the extension here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - Navigate inside your project
 - Install [Babel-ESLint](https://www.npmjs.com/package/@babel/eslint-parser)*: <br>
-    $ `npm install @babel/eslint-parser @babel/core eslint --save-dev`
+    $ `npm i -D @babel/eslint-parser @babel/core eslint @types/node` <br>
+    Or with Bun: <br>
+    $ `bun i -D @babel/eslint-parser @babel/core eslint @types/bun`
 - Get the config: <br>
     $ `wget https://raw.githubusercontent.com/NullDev/JavaScript-Styleguide/master/eslint.config.js`
 - Done! :) 
